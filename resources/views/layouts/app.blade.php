@@ -43,13 +43,19 @@
     }
     </script>
 
-    {{-- Google Fonts --}}
+    {{-- Google Fonts (preload for speed) --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+
+    @php
+        $menuCategories = cache()->remember('menu_categories', 3600, function () {
+            return \App\Models\Category::active()->orderBy('sort_order')->limit(5)->get();
+        });
+    @endphp
 </head>
 <body class="font-sans antialiased bg-gray-50 text-gray-900">
     {{-- Top Bar --}}
@@ -83,7 +89,7 @@
                 {{-- Desktop Menu --}}
                 <div class="hidden md:flex items-center gap-1">
                     <a href="/" wire:navigate class="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">Trang chủ</a>
-                    @foreach(\App\Models\Category::active()->orderBy('sort_order')->limit(5)->get() as $cat)
+                    @foreach($menuCategories as $cat)
                         <a href="/{{ $cat->slug }}" wire:navigate class="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">{{ $cat->name }}</a>
                     @endforeach
                     <a href="/blog" wire:navigate class="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all">Blog</a>
@@ -105,7 +111,7 @@
         <div id="mobile-menu" class="hidden md:hidden border-t bg-white pb-4">
             <div class="container mx-auto px-4 pt-2 space-y-1">
                 <a href="/" wire:navigate class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition">Trang chủ</a>
-                @foreach(\App\Models\Category::active()->orderBy('sort_order')->limit(5)->get() as $cat)
+                @foreach($menuCategories as $cat)
                     <a href="/{{ $cat->slug }}" wire:navigate class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition">{{ $cat->name }}</a>
                 @endforeach
                 <a href="/blog" wire:navigate class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 font-medium transition">Blog</a>
