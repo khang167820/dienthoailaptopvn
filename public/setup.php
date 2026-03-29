@@ -5,10 +5,9 @@
  * XÓA FILE NÀY NGAY SAU KHI CHẠY XONG!
  */
 
-// Chỉ cho phép chạy 1 lần duy nhất
 $lockFile = __DIR__ . '/../storage/setup.lock';
 if (file_exists($lockFile)) {
-    die('⛔ Setup đã chạy rồi. Xóa file này đi!');
+    die('⛔ Setup đã chạy rồi. Xóa file setup.lock trong storage/ nếu muốn chạy lại.');
 }
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -30,13 +29,26 @@ try {
     echo "❌ Lỗi migrate: " . $e->getMessage() . "\n\n";
 }
 
-// 2. Tạo storage link
+// 2. Tạo storage link THỦ CÔNG (vì Hostinger chặn exec/symlink)
 echo "🔗 Đang tạo Storage Link...\n";
-try {
-    Illuminate\Support\Facades\Artisan::call('storage:link', ['--force' => true]);
-    echo "✅ Storage link OK!\n\n";
-} catch (Exception $e) {
-    echo "⚠️ Storage link: " . $e->getMessage() . "\n\n";
+$target = __DIR__ . '/../storage/app/public';
+$link = __DIR__ . '/storage';
+if (!file_exists($link)) {
+    try {
+        @symlink($target, $link);
+        if (file_exists($link)) {
+            echo "✅ Storage link OK (symlink)!\n\n";
+        } else {
+            // Nếu symlink bị chặn, tạo file .htaccess redirect
+            @mkdir($link, 0755, true);
+            file_put_contents($link . '/.htaccess', 'RewriteEngine On' . PHP_EOL . 'RewriteRule ^(.*)$ /storage/app/public/$1 [L]');
+            echo "✅ Storage link OK (htaccess fallback)!\n\n";
+        }
+    } catch (Exception $e) {
+        echo "⚠️ Storage link bị chặn, cần tạo thủ công: " . $e->getMessage() . "\n\n";
+    }
+} else {
+    echo "✅ Storage link đã tồn tại!\n\n";
 }
 
 // 3. Tạo user Admin
@@ -56,12 +68,30 @@ try {
     echo "❌ Lỗi tạo admin: " . $e->getMessage() . "\n\n";
 }
 
-// 4. Clear cache
+// 4. Clear cache (không dùng Artisan vì có thể lỗi exec)
 echo "🧹 Xóa cache...\n";
-Illuminate\Support\Facades\Artisan::call('config:clear');
-Illuminate\Support\Facades\Artisan::call('route:clear');
-Illuminate\Support\Facades\Artisan::call('view:clear');
-echo "✅ Cache đã xóa sạch!\n\n";
+try {
+    // Xóa cache thủ công
+    $cachePaths = [
+        __DIR__ . '/../bootstrap/cache/config.php',
+        __DIR__ . '/../bootstrap/cache/routes-v7.php',
+        __DIR__ . '/../bootstrap/cache/services.php',
+        __DIR__ . '/../bootstrap/cache/packages.php',
+    ];
+    foreach ($cachePaths as $path) {
+        if (file_exists($path)) @unlink($path);
+    }
+    // Xóa view cache
+    $viewCache = __DIR__ . '/../storage/framework/views/';
+    if (is_dir($viewCache)) {
+        foreach (glob($viewCache . '*.php') as $file) {
+            @unlink($file);
+        }
+    }
+    echo "✅ Cache đã xóa sạch!\n\n";
+} catch (Exception $e) {
+    echo "⚠️ Xóa cache: " . $e->getMessage() . "\n\n";
+}
 
 echo "================================\n";
 echo "🎉 HOÀN TẤT! Website đã sẵn sàng!\n";
@@ -69,6 +99,5 @@ echo "🌐 Trang chủ: https://dienthoailaptop.vn\n";
 echo "🔐 Trang Admin: https://dienthoailaptop.vn/admin\n\n";
 echo "⚠️ HÃY XÓA FILE setup.php NGAY BÂY GIỜ!\n";
 
-// Đánh dấu đã chạy
 file_put_contents($lockFile, date('Y-m-d H:i:s'));
 echo '</pre>';
