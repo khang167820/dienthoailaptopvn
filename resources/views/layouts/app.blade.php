@@ -52,9 +52,7 @@
     @livewireStyles
 
     @php
-        $menuCategories = cache()->remember('menu_categories', 3600, function () {
-            return \App\Models\Category::active()->orderBy('sort_order')->limit(5)->get();
-        });
+        $menuCategories = \App\Models\Category::active()->orderBy('sort_order')->limit(5)->get(['id', 'name', 'slug']);
     @endphp
 </head>
 <body class="font-sans antialiased bg-gray-50 text-gray-900">
