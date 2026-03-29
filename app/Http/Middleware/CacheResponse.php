@@ -13,7 +13,7 @@ class CacheResponse
 
         // Chỉ cache GET requests cho trang frontend (không phải admin)
         if ($request->isMethod('GET') && !$request->is('admin/*') && !$request->is('livewire/*')) {
-            $response->headers->set('Cache-Control', 'public, max-age=300, s-maxage=600');
+            $response->headers->set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
             $response->headers->set('Vary', 'Accept-Encoding');
         }
 
