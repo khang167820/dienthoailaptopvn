@@ -11,9 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(append: [
-            \App\Http\Middleware\CacheResponse::class,
-        ]);
+        // Tạm tắt HTTP cache để test tốc độ thật
+        // $middleware->web(append: [
+        //     \App\Http\Middleware\CacheResponse::class,
+        // ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
