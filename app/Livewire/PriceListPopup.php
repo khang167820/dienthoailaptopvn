@@ -13,6 +13,13 @@ class PriceListPopup extends Component
     public $serviceFilter = '';
     public $deviceFilter = '';
 
+    public function resetFilters()
+    {
+        $this->search = '';
+        $this->serviceFilter = '';
+        $this->deviceFilter = '';
+    }
+
     public function updating($field)
     {
         // State updates trigger standard re-render
