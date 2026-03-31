@@ -14,7 +14,7 @@ class ExcelPriceSeeder extends Seeder
 {
     public function run()
     {
-        $json = file_get_contents(base_path('pricedata.json'));
+        $json = file_get_contents(database_path('seeders/pricedata.json'));
         $data = json_decode($json, true);
 
         // Ensure Apple brand exists

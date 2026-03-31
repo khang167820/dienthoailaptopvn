@@ -12,6 +12,14 @@ use Spatie\Sitemap\Tags\Url;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/sync-excel-prices-hostinger', function() {
+    \Illuminate\Support\Facades\Artisan::call('db:seed', [
+        '--class' => 'Database\\Seeders\\ExcelPriceSeeder',
+        '--force' => true
+    ]);
+    return 'Da dong bo toan bo Bang gia Excel len Hostinger thiet!';
+});
+
 // Trang chủ
 Route::get('/', [PageController::class, 'home'])->name('home');
 
