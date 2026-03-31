@@ -137,11 +137,15 @@
 @if($featuredRepairs->count())
 <section class="py-12 bg-gray-50" id="bang-gia">
     <div class="container mx-auto px-4">
-        <div class="flex items-end justify-between mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
                 <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Giá Sửa Chữa Tham Khảo</h2>
                 <div class="w-16 h-1 bg-[#d70018] mt-2 rounded-full"></div>
             </div>
+            <button x-data @click="$dispatch('open-price-popup')" class="inline-flex items-center justify-center gap-2 bg-[#d70018] text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-[0_4px_12px_rgba(215,0,24,0.3)] hover:bg-red-700 hover:-translate-y-0.5 transition-all">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                Tra Cứu Bảng Giá Nhanh
+            </button>
         </div>
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -275,4 +279,8 @@
         </div>
     </div>
 </section>
+
+{{-- Bảng Giá Nhanh Livewire Component (Modal) --}}
+@livewire('price-list-popup')
+
 @endsection
