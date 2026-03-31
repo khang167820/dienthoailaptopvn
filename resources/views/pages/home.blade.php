@@ -6,10 +6,11 @@
     <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-4">
             {{-- Main Slider --}}
-            <div class="w-full lg:w-[70%] bg-gradient-to-r from-[#d70018] to-red-600 rounded-2xl p-8 text-white relative flex flex-col justify-center min-h-[300px] shadow-lg overflow-hidden group">
-                <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+            <div class="w-full lg:w-[70%] bg-[url('/images/repair_banner.webp')] bg-cover bg-center rounded-2xl p-8 text-white relative flex flex-col justify-center min-h-[300px] shadow-lg overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 z-0"></div>
+                <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay z-0"></div>
                 <div class="relative z-10 w-full md:w-[85%]">
-                    <span class="inline-block bg-yellow-400 text-red-900 text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm uppercase tracking-wide">Chuyên gia Kỹ thuật Phần mềm</span>
+                    <span class="inline-block bg-[#d70018] border border-red-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm uppercase tracking-wide">Chuyên gia Kỹ thuật Phần mềm</span>
                     <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 drop-shadow-md">
                         SỬA CHỮA THIẾT BỊ CHUYÊN NGHIỆP <br/>
                         <span class="text-yellow-400">GIẢI PHÁP TỪ CHUYÊN GIA SỐ 1 VN</span>
