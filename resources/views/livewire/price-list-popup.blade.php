@@ -1,7 +1,7 @@
 <div>
     <div x-data="{ show: false }" @open-price-popup.window="show = true" @keydown.escape.window="show = false">
         {{-- Modal Overlay --}}
-        <div x-show="show" x-transition.opacity class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" style="display: none;">
+        <div x-show="show" x-transition.opacity class="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4" style="display: none;">
             {{-- Modal Content --}}
             <div x-show="show" 
                 x-transition:enter="transition ease-out duration-300"
@@ -11,68 +11,91 @@
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-95"
                 @click.away="show = false"
-                class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[85vh]">
+                class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[90vh] sm:h-[85vh]">
                 
                 {{-- Header --}}
                 <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center justify-between shrink-0">
                     <div>
                         <h3 class="text-xl font-black text-gray-800 tracking-tight uppercase">Tra Cứu Bảng Giá Nhanh</h3>
-                        <p class="text-xs text-gray-500 mt-1">Gõ tên dòng máy (ví dụ: iPhone 15 Pro) hoặc tên dịch vụ (ví dụ: Thay màn hình).</p>
+                        <p class="text-xs text-gray-500 mt-1">Sử dụng ô tìm kiếm và bộ lọc để tra giá chính xác nhất.</p>
                     </div>
                     <button @click="show = false" class="text-gray-400 hover:text-[#d70018] transition-colors p-2 bg-white rounded-full shadow-sm">
                         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                     </button>
                 </div>
 
-                {{-- Search Bar --}}
-                <div class="p-6 shrink-0 bg-white">
-                    <div class="relative">
-                        <input type="text" wire:model.live.debounce.300ms="search" placeholder="Nhập để tìm kiếm..." class="w-full h-12 pl-12 pr-4 text-gray-900 border-2 border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 transition-colors shadow-inner text-sm font-medium">
-                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                {{-- Search & Filters --}}
+                <div class="p-6 shrink-0 bg-white border-b border-gray-50">
+                    <div class="flex flex-col md:flex-row gap-3">
+                        {{-- Search Input --}}
+                        <div class="relative flex-1">
+                            <input type="text" wire:model.live.debounce.300ms="search" placeholder="Nhập tên máy hoặc dịch vụ (VD: iPhone 11)..." class="w-full h-11 pl-11 pr-4 text-gray-900 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 transition-colors shadow-inner text-sm font-medium">
+                            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                            </div>
+                        </div>
+                        
+                        {{-- Device Model Filter --}}
+                        <div class="w-full md:w-64">
+                            <select wire:model.live="deviceFilter" class="w-full h-11 text-gray-700 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 text-sm font-medium bg-gray-50">
+                                <option value="">-- Tất cả dòng máy --</option>
+                                @foreach($deviceModels as $model)
+                                    <option value="{{ $model->id }}">{{ $model->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
+                        {{-- Service Type Filter --}}
+                        <div class="w-full md:w-64">
+                            <select wire:model.live="serviceFilter" class="w-full h-11 text-gray-700 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 text-sm font-medium bg-gray-50">
+                                <option value="">-- Tất cả dịch vụ --</option>
+                                @foreach($serviceTypes as $service)
+                                    <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
 
-                {{-- Table Wrapper (Scrollable) --}}
-                <div class="flex-1 px-6 pb-6 relative flex flex-col min-h-0">
-                    <div wire:loading.delay class="absolute inset-0 bg-white/50 backdrop-blur-sm z-10 flex items-center justify-center">
-                        <div class="w-8 h-8 rounded-full border-4 border-gray-200 border-t-[#d70018] animate-spin"></div>
+                {{-- Table (Scrollable Area) --}}
+                <div class="flex-1 overflow-y-auto px-6 pb-6 pt-4 relative bg-gray-50/30">
+                    <div wire:loading.delay class="fixed inset-0 bg-white/50 backdrop-blur-sm z-[105] flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-full border-4 border-gray-200 border-t-[#d70018] animate-spin shadow-lg"></div>
                     </div>
 
                     @if($repairs->isEmpty())
-                        <div class="text-center py-12 m-auto">
+                        <div class="text-center py-12 m-auto bg-white rounded-2xl border border-dashed border-gray-200">
                             <div class="text-4xl mb-3">🔍</div>
-                            <h4 class="text-gray-500 font-medium">Không tìm thấy dịch vụ nào phù hợp!</h4>
-                            <p class="text-sm text-gray-400 mt-1">Hãy thử gõ lại tên máy (VD: iPhone 11) hoặc liên hệ Hotline: 0777.333.763</p>
+                            <h4 class="text-gray-500 font-medium">Không tìm thấy báo giá phù hợp!</h4>
+                            <p class="text-sm text-gray-400 mt-1">Vui lòng thay đổi từ khóa hoặc bộ lọc, hoặc gọi báo giá trực tiếp.</p>
                         </div>
                     @else
-                        <div class="overflow-y-auto flex-1 rounded-xl border border-gray-100 shadow-sm relative">
-                            <table class="w-full text-left text-sm text-gray-600 relative">
-                                <thead class="bg-red-50 sticky top-0 z-[5] shadow-sm">
+                        <div class="rounded-xl border border-gray-200 shadow-sm bg-white overflow-hidden">
+                            <table class="w-full text-left text-sm text-gray-600">
+                                <thead class="bg-red-50 border-b border-red-100">
                                     <tr>
-                                        <th class="px-4 py-3 font-extrabold text-[#d70018] uppercase tracking-widest text-xs">Dịch vụ</th>
-                                        <th class="px-4 py-3 font-extrabold text-[#d70018] uppercase tracking-widest text-xs">Dòng máy</th>
-                                        <th class="px-4 py-3 font-extrabold text-[#d70018] uppercase tracking-widest text-xs text-right">Giá sửa</th>
+                                        <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px]">Dịch vụ</th>
+                                        <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px]">Dòng máy</th>
+                                        <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px] text-right">Chi phí ước tính</th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-gray-100 bg-white">
+                                <tbody class="divide-y divide-gray-100">
                                     @foreach($repairs as $repair)
-                                        <tr class="hover:bg-gray-50 transition-colors">
-                                            <td class="px-4 py-4">
+                                        <tr class="hover:bg-red-50/40 transition-colors" wire:key="repair-{{ $repair->id }}">
+                                            <td class="px-4 py-4 align-top">
                                                 <div class="font-bold text-gray-800">{{ $repair->serviceType->name ?? 'N/A' }}</div>
                                                 @if($repair->short_description)
-                                                    <div class="text-[10px] text-gray-400 mt-0.5 max-w-xs truncate" title="{{ $repair->short_description }}">{{ $repair->short_description }}</div>
+                                                    <div class="text-[10px] text-gray-400/90 mt-1 max-w-xs leading-relaxed" title="{{ $repair->short_description }}">{{ $repair->short_description }}</div>
                                                 @endif
                                             </td>
-                                            <td class="px-4 py-4 font-semibold text-gray-700">
+                                            <td class="px-4 py-4 align-top font-semibold text-gray-700">
                                                 {{ $repair->deviceModel->name ?? 'N/A' }}
                                             </td>
-                                            <td class="px-4 py-4 text-right">
-                                                <div class="flex flex-col items-end gap-0.5">
+                                            <td class="px-4 py-4 align-top text-right">
+                                                <div class="flex flex-col items-end justify-center">
                                                     <span class="font-black text-[#d70018] text-base">{{ $repair->display_price }}</span>
                                                     @if($repair->sale_price && $repair->price != $repair->sale_price)
-                                                        <span class="text-xs text-gray-400 line-through">{{ number_format($repair->price, 0, ',', '.') }}đ</span>
+                                                        <span class="text-[11px] text-gray-400 line-through mt-0.5">{{ number_format($repair->price, 0, ',', '.') }}đ</span>
                                                     @endif
                                                 </div>
                                             </td>
@@ -81,15 +104,23 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        {{-- Infinite Scroll Trigger --}}
+                        @if($repairs->hasMorePages())
+                            <div x-intersect="$wire.loadMore()" class="py-6 flex justify-center items-center gap-2 text-gray-400 text-xs font-semibold uppercase tracking-wider">
+                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-[#d70018]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-100" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Đang tải thêm dữ liệu...
+                            </div>
+                        @else
+                            <div class="py-6 flex justify-center items-center text-gray-400 text-xs font-semibold uppercase tracking-wider">
+                                Bạn đã xem hết danh sách.
+                            </div>
+                        @endif
                     @endif
                 </div>
-
-                {{-- Pagination Footer --}}
-                @if($repairs->hasPages())
-                    <div class="px-6 py-4 border-t border-gray-100 bg-gray-50 flex-shrink-0">
-                        {{ $repairs->links() }}
-                    </div>
-                @endif
             </div>
         </div>
     </div>
