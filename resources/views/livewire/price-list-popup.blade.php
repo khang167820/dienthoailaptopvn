@@ -74,22 +74,22 @@
                             <table class="w-full text-left text-sm text-gray-600">
                                 <thead class="bg-red-50 border-b border-red-100">
                                     <tr>
-                                        <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px]">Dịch vụ</th>
                                         <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px]">Dòng máy</th>
+                                        <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px]">Dịch vụ</th>
                                         <th class="px-4 py-3.5 font-extrabold text-[#d70018] uppercase tracking-widest text-[11px] text-right">Chi phí ước tính</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100">
                                     @foreach($repairs as $repair)
                                         <tr class="hover:bg-red-50/40 transition-colors" wire:key="repair-{{ $repair->id }}">
+                                            <td class="px-4 py-4 align-top font-semibold text-gray-700">
+                                                {{ $repair->deviceModel->name ?? 'N/A' }}
+                                            </td>
                                             <td class="px-4 py-4 align-top">
                                                 <div class="font-bold text-gray-800">{{ $repair->serviceType->name ?? 'N/A' }}</div>
                                                 @if($repair->short_description)
                                                     <div class="text-[10px] text-gray-400/90 mt-1 max-w-xs leading-relaxed" title="{{ $repair->short_description }}">{{ $repair->short_description }}</div>
                                                 @endif
-                                            </td>
-                                            <td class="px-4 py-4 align-top font-semibold text-gray-700">
-                                                {{ $repair->deviceModel->name ?? 'N/A' }}
                                             </td>
                                             <td class="px-4 py-4 align-top text-right">
                                                 <div class="flex flex-col items-end justify-center">
