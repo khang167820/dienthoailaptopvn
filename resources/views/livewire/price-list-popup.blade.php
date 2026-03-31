@@ -35,22 +35,22 @@
                             </div>
                         </div>
                         
-                        {{-- Device Model Filter --}}
-                        <div class="w-full md:w-64">
-                            <select wire:model.live="deviceFilter" class="w-full h-11 text-gray-700 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 text-sm font-medium bg-gray-50">
-                                <option value="">-- Tất cả dòng máy --</option>
-                                @foreach($deviceModels as $model)
-                                    <option value="{{ $model->id }}">{{ $model->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        
                         {{-- Service Type Filter --}}
                         <div class="w-full md:w-64">
                             <select wire:model.live="serviceFilter" class="w-full h-11 text-gray-700 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 text-sm font-medium bg-gray-50">
                                 <option value="">-- Tất cả dịch vụ --</option>
                                 @foreach($serviceTypes as $service)
                                     <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Device Model Filter --}}
+                        <div class="w-full md:w-64">
+                            <select wire:model.live="deviceFilter" class="w-full h-11 text-gray-700 border border-gray-200 rounded-xl focus:border-[#d70018] focus:ring-0 text-sm font-medium bg-gray-50">
+                                <option value="">-- Tất cả dòng máy --</option>
+                                @foreach($deviceModels as $model)
+                                    <option value="{{ $model->id }}">{{ $model->name }}</option>
                                 @endforeach
                             </select>
                         </div>
