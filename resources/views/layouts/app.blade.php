@@ -22,7 +22,7 @@
         "@@type": "LocalBusiness",
         "name": "Điện Thoại Laptop VN",
         "url": "{{ url('/') }}",
-        "telephone": "+84-xxx-xxx-xxx",
+        "telephone": "+84-777-333-763",
         "address": {
             "@@type": "PostalAddress",
             "addressLocality": "TP. Hồ Chí Minh",
@@ -90,22 +90,22 @@
 
                     {{-- Right Actions --}}
                     <div class="flex items-center gap-3 shrink-0">
-                        <a href="tel:0xxxxxxxxx" class="items-center hidden gap-2 px-3 py-2 transition-colors rounded-xl lg:flex bg-white/15 hover:bg-white/25">
+                        <a href="tel:0777333763" class="items-center hidden gap-2 px-3 py-2 transition-colors rounded-xl lg:flex bg-white/15 hover:bg-white/25">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
                                 <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                             </div>
                             <div class="flex flex-col">
-                                <span class="text-[11px] opacity-80 leading-none mb-0.5">Gọi tư vấn</span>
-                                <span class="text-sm font-bold leading-none">0xxx.xxx</span>
+                                <span class="text-[11px] opacity-80 leading-none mb-0.5">Gọi tư vấn (Mai Quyên)</span>
+                                <span class="text-sm font-bold leading-none">0777.333.763</span>
                             </div>
                         </a>
-                        <a href="#" class="items-center hidden gap-2 px-3 py-2 transition-colors rounded-xl md:flex bg-white/15 hover:bg-white/25">
+                        <a href="tel:0934660219" class="items-center hidden gap-2 px-3 py-2 transition-colors rounded-xl md:flex bg-white/15 hover:bg-white/25">
                             <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20">
                                 <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </div>
                             <div class="flex flex-col">
-                                <span class="text-[11px] opacity-80 leading-none mb-0.5">Tìm cửa hàng</span>
-                                <span class="text-sm font-bold leading-none">Gần bạn</span>
+                                <span class="text-[11px] opacity-80 leading-none mb-0.5">Kỹ thuật (Khang)</span>
+                                <span class="text-sm font-bold leading-none">0934.660.219</span>
                             </div>
                         </a>
                         
@@ -178,13 +178,14 @@
                             <p class="text-[11px] uppercase tracking-wider text-gray-500 uppercase font-semibold">Hệ thống sửa chữa uy tín</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6 pr-4">Chuyên phân phối, sửa chữa điện thoại và laptop chính hãng. Chúng tôi cam kết sử dụng linh kiện zin 100%, bảo hành dài hạn với quy trình minh bạch.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 pr-4">Hệ thống sửa chữa & cung cấp giải pháp phần mềm hàng đầu. Trực thuộc hệ sinh thái <a href="https://thuetaikhoan.com.vn" class="text-[#d70018] font-bold" target="_blank">Thuetaikhoan.com.vn</a>.</p>
                     
                     <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100">
                         <p class="text-sm font-semibold text-gray-800 mb-2">Thông tin liên hệ</p>
                         <div class="space-y-3 text-sm text-gray-600">
-                            <p class="flex items-center gap-2">📞 Tổng đài: <a href="tel:0xxxxxxxxx" class="text-[#d70018] font-bold hover:underline">0xxx.xxx.xxx</a></p>
-                            <p class="flex items-start gap-2">📍 Địa chỉ: Tầng 1, Tòa nhà ABC, xxx Đường Y, Quận Z, TP.HCM</p>
+                            <p class="flex items-center gap-2">📞 CSKH tư vấn: <a href="tel:0777333763" class="text-[#d70018] font-bold hover:underline">0777.333.763</a> (Mai Quyên)</p>
+                            <p class="flex items-center gap-2">🔧 Hỗ trợ kỹ thuật: <a href="tel:0934660219" class="text-[#d70018] font-bold hover:underline">0934.660.219</a> (Khang/Thanhtaj)</p>
+                            <p class="flex items-center gap-2">🌐 Cộng đồng Thợ: <a href="https://zalo.me/g/qncjky686" target="_blank" class="text-[#d70018] font-bold hover:underline">Tham gia Zalo Group</a></p>
                             <p class="flex items-center gap-2">⏰ Giờ phục vụ: 08:00 - 21:00 (Kể cả Chủ Nhật)</p>
                         </div>
                     </div>
@@ -222,10 +223,11 @@
 
             {{-- Copyright --}}
             <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-                <p>&copy; {{ date('Y') }} Công ty Cổ phần Thương mại Dịch vụ Điện Thoại Laptop VN.</p>
+                <p>&copy; {{ date('Y') }} Điển Thoại Laptop VN & Thuetaikhoan Ecosystem. All rights reserved.</p>
                 <div class="flex gap-4">
-                    <a href="#" class="hover:text-[#d70018] transition">Điều khoản sử dụng</a>
-                    <a href="#" class="hover:text-[#d70018] transition">Bảo mật thông tin</a>
+                    <a href="https://thuetaikhoan.com.vn" target="_blank" class="hover:text-[#d70018] transition font-bold">Thuê Tool Tự Động</a>
+                    <a href="https://www.facebook.com/people/Thuetaikhoannet/61586731454108/" target="_blank" class="hover:text-[#d70018] transition">Fanpage</a>
+                    <a href="https://zalo.me/g/qncjky686" target="_blank" class="hover:text-[#d70018] transition">Zalo Group</a>
                 </div>
             </div>
         </div>

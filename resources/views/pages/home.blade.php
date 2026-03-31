@@ -5,38 +5,51 @@
 <section class="bg-gray-50 pt-6 pb-8">
     <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-4">
-            {{-- Main Slider (Placeholder) --}}
+            {{-- Main Slider --}}
             <div class="w-full lg:w-[70%] bg-gradient-to-r from-[#d70018] to-red-600 rounded-2xl p-8 text-white relative flex flex-col justify-center min-h-[300px] shadow-lg overflow-hidden group">
                 <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
-                <div class="relative z-10 w-full md:w-3/4">
-                    <span class="inline-block bg-yellow-400 text-red-900 text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm uppercase tracking-wide">Khuyến mãi tháng {{ date('n') }}</span>
+                <div class="relative z-10 w-full md:w-[85%]">
+                    <span class="inline-block bg-yellow-400 text-red-900 text-xs font-bold px-3 py-1 rounded-full mb-4 shadow-sm uppercase tracking-wide">Chuyên gia Kỹ thuật Phần mềm</span>
                     <h1 class="text-3xl md:text-5xl font-black leading-tight mb-4 drop-shadow-md">
-                        SỬA CHỮA THIẾT BỊ <br/>
-                        <span class="text-yellow-400">CHUYÊN NGHIỆP</span>
+                        SỬA CHỮA THIẾT BỊ CHUYÊN NGHIỆP <br/>
+                        <span class="text-yellow-400">GIẢI PHÁP TỪ CHUYÊN GIA SỐ 1 VN</span>
                     </h1>
-                    <p class="text-white/90 mb-6 font-medium">Bảo hành tới 12 tháng. Thay pin, màn hình lấy liền sau 15 phút.</p>
-                    <a href="#bang-gia" class="inline-block bg-white text-[#d70018] px-8 py-3 rounded-xl font-bold uppercase text-sm hover:bg-yellow-400 hover:text-black hover:shadow-xl transition-all duration-300">
-                        Xem bảng giá ngay
-                    </a>
+                    <p class="text-white/90 mb-6 font-medium text-sm md:text-base leading-relaxed">
+                        Hơn 8 năm thực chiến phần cứng & nắm giữ hệ sinh thái phần mềm Unlock/Bypass lớn nhất. Chúng tôi không chỉ "thay thế linh kiện", chúng tôi cứu sống thiết bị của bạn.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="tel:0777333763" class="inline-block bg-white text-[#d70018] px-6 py-3 rounded-xl font-bold uppercase text-sm hover:bg-yellow-400 hover:text-black hover:shadow-xl transition-all duration-300">
+                            Báo giá lỗi ngay
+                        </a>
+                        <a href="https://thuetaikhoan.com.vn" target="_blank" class="inline-block bg-black/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-xl font-bold uppercase text-sm hover:bg-white/20 transition-all duration-300">
+                            Dành cho Thợ (Thuê Tool tự động)
+                        </a>
+                    </div>
+                </div>
+                {{-- Trust Badges within Slider --}}
+                <div class="hidden md:flex absolute bottom-4 right-4 gap-4 bg-black/20 backdrop-blur-md rounded-xl p-3 border border-white/20">
+                     <div class="text-xs text-white text-center"><strong class="block text-yellow-400 text-lg">1000+</strong> Thợ toàn quốc</div>
+                     <div class="w-px h-10 bg-white/30"></div>
+                     <div class="text-xs text-white text-center"><strong class="block text-yellow-400 text-lg">100%</strong> Xử lý từ xa</div>
                 </div>
             </div>
 
             {{-- 2 Side Banners --}}
             <div class="hidden lg:flex w-[30%] flex-col gap-4">
                 <div class="flex-1 bg-gradient-to-br from-gray-800 to-black rounded-2xl p-6 text-white relative overflow-hidden flex items-center shadow-md group border border-gray-200">
-                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform">🔋</div>
-                    <div class="relative z-10">
-                        <p class="text-yellow-400 font-bold mb-1">Thay Pin iPhone</p>
-                        <h3 class="font-black text-xl mb-2 text-white">Chính Hãng 100%</h3>
-                        <p class="text-sm text-gray-400">BH 1 đổi 1 12 Tháng</p>
+                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform">💻</div>
+                    <div class="relative z-10 w-full">
+                        <p class="text-yellow-400 font-bold mb-1">Hệ Sinh Thái GSM</p>
+                        <h3 class="font-black text-lg mb-2 text-white">Xóa iCloud, MDM, Knox</h3>
+                        <p class="text-xs text-gray-400">Mở khóa từ xa qua TeamViewer / UltraViewer</p>
                     </div>
                 </div>
-                <div class="flex-1 bg-white rounded-2xl p-6 border-2 border-[#d70018] text-[#d70018] relative overflow-hidden flex items-center shadow-md group">
-                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-5 group-hover:scale-110 transition-transform">📱</div>
+                <div class="flex-1 bg-white rounded-2xl p-6 border-2 border-[#d70018] text-[#d70018] relative overflow-hidden flex items-center shadow-md group hover:bg-red-50 transition-colors">
+                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-5 group-hover:scale-110 transition-transform">🚗</div>
                     <div class="relative z-10">
-                        <p class="text-gray-500 text-sm font-semibold mb-1">Dịch Vụ Ép Kính</p>
-                        <h3 class="font-black text-xl mb-2 text-[#d70018]">Giảm Giá 20%</h3>
-                        <p class="text-sm font-medium">Click lấy mã ngay</p>
+                        <p class="text-gray-500 text-sm font-semibold mb-1">Giải Pháp Ô Tô</p>
+                        <h3 class="font-black text-xl mb-2 text-[#d70018]">Vietmap Live Pro</h3>
+                        <p class="text-xs font-medium text-gray-600">Cài đặt & Gia hạn bản quyền VIP</p>
                     </div>
                 </div>
             </div>
@@ -44,12 +57,22 @@
     </div>
 </section>
 
+{{-- Problem Statement / Core Message --}}
+<section class="py-12 bg-white" id="van-de-khach-hang">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-2xl md:text-3xl font-black text-[#d70018] mb-4">MÁY MẤT NGUỒN, DÍNH ICLOUD, MDM HAY RƠI VỠ? ĐỪNG VỘI BỎ ĐI!</h2>
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base font-medium">
+            Cho dù là lỗi phần cứng phức tạp (chạm chập main, gãy test point) hay mắc kẹt tột độ ở phần mềm (Knox Guard, iCloud, Brick), đội ngũ <strong>Điện Thoại Laptop VN</strong> (Chuyên gia Khang & Thanhtaj) đều có giải pháp. Nhờ việc trực tiếp thao tác và phân phối các loại tool mạnh nhất thế giới (UnlockTool, Z3X, Chimera, UMT...), bạn sẽ tiết kiệm thời gian lẫn chi phí so với việc "qua tay" nhiều thợ khác.
+        </p>
+    </div>
+</section>
+
 {{-- Chọn thiết bị / Hãng --}}
-<section class="py-12 bg-white" id="thiet-bi">
+<section class="py-10 bg-gray-50 border-t border-gray-100" id="thiet-bi">
     <div class="container mx-auto px-4">
         <div class="flex items-end justify-between mb-8">
             <div>
-                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Sửa Theo Hãng</h2>
+                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Sửa Chữa Phần Cứng Theo Hãng</h2>
                 <div class="w-16 h-1 bg-[#d70018] mt-2 rounded-full"></div>
             </div>
         </div>
@@ -72,41 +95,50 @@
     </div>
 </section>
 
-{{-- Danh mục dịch vụ --}}
-<section class="py-12 bg-gray-50">
+{{-- Danh mục dịch vụ B2B & B2C Core --}}
+<section class="py-12 bg-white">
     <div class="container mx-auto px-4">
         <div class="flex items-end justify-between mb-8">
             <div>
-                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Các Dịch Vụ Nổi Bật</h2>
+                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Dịch Vụ Mũi Nhọn Của Chúng Tôi</h2>
                 <div class="w-16 h-1 bg-[#d70018] mt-2 rounded-full"></div>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            @foreach($categories as $category)
-                <a href="/{{ $category->slug }}" wire:navigate
-                   class="group bg-white rounded-xl p-5 border border-gray-200 hover:border-[#d70018] hover:shadow-xl transition-all duration-300 flex items-center gap-4 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-16 h-16 bg-red-50 rounded-bl-full -z-10 group-hover:scale-150 transition-transform"></div>
-                    <div class="w-14 h-14 bg-gray-50 group-hover:bg-[#d70018] rounded-full flex items-center justify-center text-2xl flex-shrink-0 transition-colors shadow-sm">
-                        <span class="group-hover:scale-110 transition-transform">{{ $category->icon ?? '🔧' }}</span>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-gray-800 group-hover:text-[#d70018] transition-colors">{{ $category->name }}</h3>
-                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">{{ $category->description ?: 'Bảo hành tận tâm, chuyên nghiệp' }}</p>
-                    </div>
-                </a>
-            @endforeach
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-[#d70018] hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                <div class="w-12 h-12 mb-4 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm text-[#d70018] group-hover:scale-110 transition-transform">📱</div>
+                <h3 class="font-bold text-gray-800 mb-2">Sửa Phần Cứng Lấy Liền</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">Thay màn hình, thay pin chính hãng, ép kính. Khám đúng bệnh, khách hàng quan sát trực tiếp. Báo giá minh bạch không phát sinh.</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 hover:border-[#d70018] hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                <div class="w-12 h-12 mb-4 bg-white rounded-full flex items-center justify-center text-2xl shadow-sm text-[#d70018] group-hover:scale-110 transition-transform">💻</div>
+                <h3 class="font-bold text-gray-800 mb-2">Unlock, Fix Khóa Từ Xa</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">Xóa iCloud, dọn FRP, Knox Guard, MDM, Repair Boot cho mọi dòng Apple, Samsung, Xiaomi. Giải cứu thiết bị bị Brick chuyên nghiệp.</p>
+            </div>
+            <div class="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 border border-gray-800 hover:border-[#d70018] hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 text-6xl opacity-20">⚙️</div>
+                <div class="w-12 h-12 mb-4 bg-white/10 rounded-full flex items-center justify-center text-2xl shadow-sm text-yellow-400 group-hover:scale-110 transition-transform">🌐</div>
+                <h3 class="font-bold text-white mb-2">Hệ Sinh Thái Thuê Tool</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">Giải pháp B2B số 1 Việt Nam cho thợ. Hệ thống web thuê Box, Tool bản quyền tự động 24/7. Trực thuộc Thuetaikhoan.com.vn.</p>
+                <a href="https://thuetaikhoan.com.vn" target="_blank" class="text-yellow-400 text-xs font-bold mt-4 inline-block hover:underline">Khám phá ngay →</a>
+            </div>
+            <div class="bg-white rounded-xl p-5 border-2 border-[#d70018]/30 hover:border-[#d70018] hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                 <div class="w-12 h-12 mb-4 bg-red-50 rounded-full flex items-center justify-center text-2xl shadow-sm text-[#d70018] group-hover:scale-110 transition-transform">🚘</div>
+                <h3 class="font-bold text-gray-800 mb-2 text-[#d70018]">Dịch Vụ Ô Tô Việt Map</h3>
+                <p class="text-xs text-gray-600 leading-relaxed">Đại lý cung cấp bản quyền Vietmap Live Pro chính hãng, gia hạn phần mềm cảnh báo giao thông an toàn cho người sử dụng ô tô.</p>
+            </div>
         </div>
     </div>
 </section>
 
 {{-- Bảng giá nổi bật --}}
 @if($featuredRepairs->count())
-<section class="py-12 bg-white" id="bang-gia">
+<section class="py-12 bg-gray-50" id="bang-gia">
     <div class="container mx-auto px-4">
         <div class="flex items-end justify-between mb-8">
             <div>
-                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Giá Sửa Chữa Tốt Nhất</h2>
+                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Giá Sửa Chữa Tham Khảo</h2>
                 <div class="w-16 h-1 bg-[#d70018] mt-2 rounded-full"></div>
             </div>
         </div>
@@ -150,59 +182,68 @@
 </section>
 @endif
 
-{{-- Quy trình sửa chữa --}}
-<section class="py-12 bg-gray-50">
+{{-- E-E-A-T Section (Tại sao tin tưởng) --}}
+<section class="py-12 bg-white border-y border-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight text-center mb-10">Quy Trình Hoạt Động Của DL</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
-            {{-- Đường nối gạch đứt (chỉ hiện trên Desktop) --}}
-            <div class="hidden md:block absolute top-[40px] left-[12%] right-[12%] h-0.5 border-t-2 border-dashed border-red-200 -z-0"></div>
-
-            @php
-                $steps = [
-                    ['icon' => '1', 'title' => 'Tiếp nhận báo giá', 'desc' => 'Chuẩn đoán lỗi, báo giá minh bạch miễn phí'],
-                    ['icon' => '2', 'title' => 'Đồng ý sửa chữa', 'desc' => 'Khách chốt giá & phương án giải quyết'],
-                    ['icon' => '3', 'title' => 'Kỹ thuật xử lý', 'desc' => 'Xem trực tiếp quy trình sửa chữa'],
-                    ['icon' => '4', 'title' => 'Bàn giao bảo hành', 'desc' => 'Dán tem & hậu mãi tận tình'],
-                ];
-            @endphp
-            @foreach($steps as $index => $step)
-                <div class="relative text-center z-10">
-                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-white rounded-full shadow-md flex items-center justify-center text-xl md:text-2xl font-black text-[#d70018] mb-4 border-4 border-red-50">
-                        {{ $step['icon'] }}
-                    </div>
-                    <h3 class="font-bold text-gray-800 text-sm md:text-base mb-1">{{ $step['title'] }}</h3>
-                    <p class="text-xs text-gray-500">{{ $step['desc'] }}</p>
+        <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight text-center mb-10">Tại Sao Khách Hàng & Các Thợ Khác Chọn Chúng Tôi?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-[#d70018] font-bold">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Lõi Kỹ Thuật Chuyên Sâu
                 </div>
-            @endforeach
+                <p class="text-sm text-gray-600 leading-relaxed">Chúng tôi tự biên soạn sơ đồ Test Point EDL 9008 cho hàng trăm mã máy Xiaomi, Samsung, am hiểu tận gốc rễ bảng mạch.</p>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-[#d70018] font-bold">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Công Nghệ Mở Khóa Đỉnh Cao
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Quản lý hệ sinh thái cho thuê Tool (UnlockTool, DFT Pro, Cheetah...). Bạn không thể tìm được nơi nào đầy đủ đồ chơi phần mềm hơn.</p>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-[#d70018] font-bold">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Thay Thế Không Sửa Mò
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Kinh nghiệm thực chiến 8 năm giúp chúng tôi chuẩn đoán đúng bệnh trong tíc tắc, xử lý triệt để, không lãng phí ví tiền của khách.</p>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-2 text-[#d70018] font-bold">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    Cộng Đồng Vững Mạnh
+                </div>
+                <p class="text-sm text-gray-600 leading-relaxed">Hỗ trợ cộng đồng Zalo lớn mạnh. Chúng tôi cung cấp giải pháp cho thợ (B2B) và bảo hành uy tín cho người dùng (B2C) toàn quốc.</p>
+            </div>
         </div>
     </div>
 </section>
 
-{{-- Blog --}}
+{{-- Blog / Kiến thức Test Point --}}
 @if($latestPosts->count())
-<section class="py-12 bg-white">
+<section class="py-12 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="flex items-end justify-between mb-8">
             <div>
-                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Thủ Thuật Công Nghệ</h2>
+                <h2 class="text-2xl font-black text-gray-800 uppercase tracking-tight">Chia Sẻ Kiến Thức Tới Cộng Đồng</h2>
                 <div class="w-16 h-1 bg-[#d70018] mt-2 rounded-full"></div>
             </div>
-            <a href="/blog" wire:navigate class="text-sm font-semibold text-[#d70018] hover:underline hidden sm:block">Xem tất cả →</a>
+            <a href="/blog" wire:navigate class="text-sm font-semibold text-[#d70018] hover:underline hidden sm:block">Xem tất cả bài viết →</a>
         </div>
 
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             @foreach($latestPosts as $post)
                 <a href="/blog/{{ $post->slug }}" wire:navigate class="group">
-                    <div class="bg-white rounded-xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-                        <div class="aspect-[16/9] w-full bg-gray-100 overflow-hidden">
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full hover:border-[#d70018]">
+                        <div class="aspect-[16/9] w-full bg-gray-100 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10"></div>
                             @if($post->thumbnail)
                                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                             @else
-                                <div class="w-full h-full flex items-center justify-center text-3xl">📝</div>
+                                <div class="w-full h-full flex items-center justify-center text-3xl">🗂️</div>
                             @endif
                         </div>
-                        <div class="p-3 flex-1 flex flex-col">
+                        <div class="p-4 flex-1 flex flex-col">
                             <h3 class="font-bold text-sm text-gray-800 group-hover:text-[#d70018] transition-colors line-clamp-2 mb-2">{{ $post->title }}</h3>
                             <p class="text-xs text-gray-500 line-clamp-2 mt-auto">{{ $post->excerpt }}</p>
                         </div>
@@ -214,17 +255,23 @@
 </section>
 @endif
 
-{{-- CTA --}}
+{{-- CTA Độc Quyền --}}
 <section class="py-12 relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-r from-red-600 to-[#d70018]"></div>
     <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
-        <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-3">Tư Vấn Bắt Bệnh Miễn Phí</h2>
-        <p class="text-white/80 mb-6 text-sm font-medium">Hoàn tiền 100% nếu không hài lòng về dịch vụ!</p>
-        <a href="tel:0xxxxxxxxx" class="inline-flex items-center gap-2 bg-yellow-400 text-black px-8 py-4 rounded-xl text-lg md:text-xl font-black hover:bg-white hover:text-[#d70018] transition-all duration-300 shadow-xl hover:scale-105">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            0xxx.xxx.xxx
-        </a>
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-3">Tư Vấn Bắt Bệnh Từ Kỹ Thuật Viên Trưởng</h2>
+        <p class="text-white/90 mb-6 text-sm md:text-base font-medium">Báo đúng giá - Chữa đúng bệnh. Đảm bảo uy tín thương hiệu Thuetaikhoan.</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="tel:0777333763" class="inline-flex items-center gap-2 bg-yellow-400 text-black px-8 py-4 rounded-xl text-lg font-black hover:bg-white hover:text-[#d70018] transition-all duration-300 shadow-xl hover:scale-105">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Tư vấn CSKH: 0777.333.763
+            </a>
+            <a href="tel:0934660219" class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm border-2 border-white/50 text-white px-8 py-4 rounded-xl text-lg font-black hover:bg-white hover:text-[#d70018] hover:border-white transition-all duration-300 shadow-xl">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                Hỗ trợ Kỹ thuật: 0934.660.219
+            </a>
+        </div>
     </div>
 </section>
 @endsection
