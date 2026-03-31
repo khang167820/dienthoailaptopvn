@@ -3,31 +3,19 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use Livewire\WithPagination;
 use App\Models\Repair;
 use App\Models\ServiceType;
 use App\Models\DeviceModel;
 
 class PriceListPopup extends Component
 {
-    use WithPagination;
-
     public $search = '';
     public $serviceFilter = '';
     public $deviceFilter = '';
-    public $perPage = 15;
-
-    public function loadMore()
-    {
-        $this->perPage += 15;
-    }
 
     public function updating($field)
     {
-        if (in_array($field, ['search', 'serviceFilter', 'deviceFilter'])) {
-            $this->resetPage();
-            $this->perPage = 15;
-        }
+        // State updates trigger standard re-render
     }
 
     public function render()
@@ -58,7 +46,7 @@ class PriceListPopup extends Component
             $query->where('device_model_id', $this->deviceFilter);
         }
 
-        $repairs = $query->orderBy('id', 'asc')->paginate($this->perPage);
+        $repairs = $query->orderBy('id', 'asc')->get();
 
         return view('livewire.price-list-popup', [
             'repairs' => $repairs,
