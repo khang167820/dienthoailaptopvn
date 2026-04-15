@@ -406,3 +406,449 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes revealLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealScale {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.reveal {
+    opacity: 0;
+    transition: none;
+}
+
+.reveal.revealed {
+    animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-left.revealed {
+    animation: revealLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-right.revealed {
+    animation: revealRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-scale.revealed {
+    animation: revealScale 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Stagger children */
+.stagger-children.revealed > * { opacity: 0; animation: revealUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.stagger-children.revealed > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children.revealed > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger-children.revealed > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger-children.revealed > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger-children.revealed > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger-children.revealed > *:nth-child(6) { animation-delay: 0.40s; }
+.stagger-children.revealed > *:nth-child(7) { animation-delay: 0.47s; }
+.stagger-children.revealed > *:nth-child(8) { animation-delay: 0.54s; }
+
+/* ═══════════════════════════════════════════
+   PARTICLE DOTS (Hero Background)
+   ═══════════════════════════════════════════ */
+@keyframes particleDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    25% { transform: translate(15px, -20px) scale(1.2); opacity: 0.6; }
+    50% { transform: translate(-10px, -35px) scale(0.8); opacity: 0.4; }
+    75% { transform: translate(20px, -15px) scale(1.1); opacity: 0.5; }
+}
+
+.particle-field {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle-field span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: particleDrift linear infinite;
+}
+
+/* ═══════════════════════════════════════════
+   MARQUEE BRAND SCROLL
+   ═══════════════════════════════════════════ */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, #f9fafb, transparent);
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, #f9fafb, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════════
+   COUNTER ANIMATION
+   ═══════════════════════════════════════════ */
+@keyframes counterPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.counter-value {
+    font-variant-numeric: tabular-nums;
+    transition: transform 0.3s ease;
+}
+
+.counter-value.counted {
+    animation: counterPop 0.4s ease-out;
+}
+
+/* ═══════════════════════════════════════════
+   GLASSMORPHISM CARD VARIANTS
+   ═══════════════════════════════════════════ */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 16px 48px rgba(215, 0, 24, 0.1), 0 4px 12px rgba(0, 0, 0, 0.04);
+    transform: translateY(-6px);
+}
+
+.glass-card-dark {
+    background: rgba(26, 26, 46, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card-dark:hover {
+    background: rgba(26, 26, 46, 0.95);
+    box-shadow: 0 16px 48px rgba(215, 0, 24, 0.15), 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+}
+
+/* ═══════════════════════════════════════════
+   ANIMATED GRADIENT BORDER
+   ═══════════════════════════════════════════ */
+@keyframes borderRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-border {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, #d70018, #ff6b6b, #fbbf24, #d70018);
+    background-size: 300% 300%;
+    animation: borderRotate 4s linear infinite;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* ═══════════════════════════════════════════
+   TESTIMONIAL CARDS
+   ═══════════════════════════════════════════ */
+.testimonial-card {
+    background: white;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    position: relative;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 12px 40px rgba(215, 0, 24, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    transform: translateY(-4px);
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    color: rgba(215, 0, 24, 0.06);
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-stars svg {
+    width: 16px;
+    height: 16px;
+    fill: #fbbf24;
+}
+
+/* ═══════════════════════════════════════════
+   FLOATING SHAPES (Decorative)
+   ═══════════════════════════════════════════ */
+@keyframes floatSlow {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(10px, -15px) rotate(5deg); }
+    66% { transform: translate(-8px, -25px) rotate(-3deg); }
+}
+
+@keyframes floatMedium {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-15px, -20px) rotate(10deg); }
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
+.floating-shape--1 { animation: floatSlow 8s ease-in-out infinite; }
+.floating-shape--2 { animation: floatMedium 6s ease-in-out infinite; }
+.floating-shape--3 { animation: floatSlow 10s ease-in-out infinite reverse; }
+
+/* ═══════════════════════════════════════════
+   3D BUTTON EFFECT
+   ═══════════════════════════════════════════ */
+.btn-3d {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-3d:hover {
+    transform: translateY(-3px) perspective(800px) rotateX(2deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-3d:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ═══════════════════════════════════════════
+   TYPING CURSOR
+   ═══════════════════════════════════════════ */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.typing-cursor::after {
+    content: '|';
+    animation: blink 0.8s infinite;
+    color: #fbbf24;
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   TIMELINE CONNECTOR
+   ═══════════════════════════════════════════ */
+.timeline-connector {
+    position: relative;
+}
+
+.timeline-connector::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(to bottom, var(--color-brand), transparent);
+}
+
+/* ═══════════════════════════════════════════
+   ENHANCED CARD HOVER (Premium)
+   ═══════════════════════════════════════════ */
+.card-premium {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-premium::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(215, 0, 24, 0) 0%, rgba(215, 0, 24, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.card-premium:hover::after {
+    opacity: 1;
+}
+
+.card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -12px rgba(215, 0, 24, 0.15), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ═══════════════════════════════════════════
+   NOISE TEXTURE OVERLAY
+   ═══════════════════════════════════════════ */
+.noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ═══════════════════════════════════════════
+   MAGAZINE BLOG CARD
+   ═══════════════════════════════════════════ */
+.blog-featured {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    min-height: 380px;
+}
+
+.blog-featured img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog-featured:hover img {
+    transform: scale(1.05);
+}
+
+.blog-featured .blog-featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+    z-index: 1;
+}
+
+.blog-featured .blog-featured-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 2;
+    color: white;
+}
+
+/* ═══════════════════════════════════════════
+   ICON PULSE RING
+   ═══════════════════════════════════════════ */
+@keyframes iconPulseRing {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+.icon-with-pulse {
+    position: relative;
+}
+
+.icon-with-pulse::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: inherit;
+    opacity: 0;
+    animation: iconPulseRing 2s ease-out infinite;
+    z-index: -1;
+}
+
+/* ═══════════════════════════════════════════
+   STAT CARD STYLING
+   ═══════════════════════════════════════════ */
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.15), transparent);
+}
+
+.stat-card:last-child::after {
+    display: none;
+}

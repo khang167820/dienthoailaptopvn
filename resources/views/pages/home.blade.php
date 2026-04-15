@@ -1,65 +1,105 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Hero Section Premium --}}
-<section class="relative bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] pt-8 pb-12 overflow-hidden">
-    {{-- Decorative elements --}}
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M30%200L60%2030L30%2060L0%2030Z%22%20fill=%22none%22%20stroke=%22rgba(255,255,255,0.02)%22%20stroke-width=%221%22/%3E%3C/svg%3E')] opacity-50"></div>
-    <div class="absolute top-10 right-10 w-72 h-72 bg-[#d70018]/10 rounded-full blur-3xl animate-float pointer-events-none"></div>
-    <div class="absolute bottom-10 left-10 w-56 h-56 bg-blue-500/10 rounded-full blur-3xl animate-float delay-200 pointer-events-none"></div>
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  HERO SECTION — CINEMATIC PREMIUM                      ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="relative bg-gradient-to-br from-[#0a0a1a] via-[#1a1a2e] to-[#0f3460] pt-8 pb-14 overflow-hidden noise-overlay">
+    {{-- Particle field --}}
+    <div class="particle-field">
+        <span style="top:10%;left:5%;animation-duration:7s"></span>
+        <span style="top:25%;left:15%;animation-duration:9s;animation-delay:1s"></span>
+        <span style="top:60%;left:25%;animation-duration:6s;animation-delay:0.5s"></span>
+        <span style="top:15%;left:40%;animation-duration:11s;animation-delay:2s"></span>
+        <span style="top:70%;left:55%;animation-duration:8s;animation-delay:1.5s"></span>
+        <span style="top:30%;left:65%;animation-duration:10s;animation-delay:0.8s"></span>
+        <span style="top:80%;left:75%;animation-duration:7s;animation-delay:2.5s"></span>
+        <span style="top:45%;left:85%;animation-duration:9s;animation-delay:0.3s"></span>
+        <span style="top:20%;left:90%;animation-duration:12s;animation-delay:1.8s"></span>
+        <span style="top:55%;left:10%;animation-duration:8s;animation-delay:3s"></span>
+        <span style="top:35%;left:50%;animation-duration:6s;animation-delay:2.2s"></span>
+        <span style="top:75%;left:35%;animation-duration:10s;animation-delay:0.7s"></span>
+    </div>
+
+    {{-- Decorative glows --}}
+    <div class="absolute top-10 right-10 w-96 h-96 bg-[#d70018]/10 rounded-full blur-3xl animate-float pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-72 h-72 bg-blue-500/8 rounded-full blur-3xl animate-float delay-200 pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-radial from-purple-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+    {{-- SVG grid pattern --}}
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M30%200L60%2030L30%2060L0%2030Z%22%20fill=%22none%22%20stroke=%22rgba(255,255,255,0.02)%22%20stroke-width=%221%22/%3E%3C/svg%3E')] opacity-60"></div>
 
     <div class="container mx-auto px-4 relative z-10">
         <div class="flex flex-col lg:flex-row gap-5">
-            {{-- Main Slider --}}
-            <div class="w-full lg:w-[70%] bg-[url('/images/repair_banner.webp')] bg-cover bg-center rounded-2xl p-8 lg:p-10 text-white relative flex flex-col justify-center min-h-[320px] shadow-2xl overflow-hidden group">
-                <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30 z-0"></div>
+            {{-- Main Hero Banner --}}
+            <div class="w-full lg:w-[70%] bg-[url('/images/repair_banner_new.png')] bg-cover bg-center rounded-2xl p-8 lg:p-12 text-white relative flex flex-col justify-center min-h-[360px] shadow-2xl overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25 z-0"></div>
+
                 <div class="relative z-10 w-full md:w-[85%]">
-                    <span class="inline-flex items-center gap-1.5 bg-[#d70018] border border-red-400/30 text-white text-xs font-bold px-3.5 py-1.5 rounded-full mb-5 shadow-lg shadow-red-500/20 uppercase tracking-wide">
-                        <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+                    <span class="inline-flex items-center gap-2 bg-gradient-to-r from-[#d70018] to-[#ff2d4a] text-white text-xs font-bold px-4 py-2 rounded-full mb-6 shadow-lg shadow-red-500/30 uppercase tracking-widest">
+                        <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
                         Chuyên gia Kỹ thuật Phần mềm
                     </span>
-                    <h1 class="text-3xl md:text-5xl font-black leading-[1.1] mb-5 drop-shadow-lg">
+
+                    <h1 class="text-3xl md:text-5xl font-black leading-[1.08] mb-5 drop-shadow-lg">
                         SỬA CHỮA THIẾT BỊ <br class="hidden md:block"/>CHUYÊN NGHIỆP
-                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-400 mt-1">GIẢI PHÁP TỪ CHUYÊN GIA SỐ 1 VN</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400 mt-2 typing-cursor" id="hero-tagline">GIẢI PHÁP TỪ CHUYÊN GIA SỐ 1 VN</span>
                     </h1>
-                    <p class="text-white/80 mb-7 font-medium text-sm md:text-base leading-relaxed max-w-xl">
-                        Hơn 8 năm thực chiến phần cứng & nắm giữ hệ sinh thái phần mềm Unlock/Bypass lớn nhất. Chúng tôi không chỉ "thay thế linh kiện", chúng tôi cứu sống thiết bị của bạn.
+
+                    <p class="text-white/80 mb-8 font-medium text-sm md:text-base leading-relaxed max-w-xl">
+                        Hơn 8 năm thực chiến phần cứng & nắm giữ hệ sinh thái phần mềm Unlock/Bypass lớn nhất. Chúng tôi không chỉ "thay thế linh kiện", chúng tôi <strong class="text-white">cứu sống thiết bị</strong> của bạn.
                     </p>
+
                     <div class="flex flex-wrap gap-3">
-                        <a href="tel:0777333763" class="inline-flex items-center gap-2 bg-white text-[#d70018] px-7 py-3.5 rounded-xl font-bold uppercase text-sm hover:bg-yellow-400 hover:text-black hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg">
+                        <a href="tel:0777333763" class="btn-3d inline-flex items-center gap-2.5 bg-white text-[#d70018] px-7 py-3.5 rounded-xl font-bold uppercase text-sm shadow-lg hover:bg-yellow-400 hover:text-black transition-colors duration-300">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                             Báo giá lỗi ngay
                         </a>
-                        <a href="https://thuetaikhoan.com.vn" target="_blank" class="inline-flex items-center gap-2 glass-dark text-white px-7 py-3.5 rounded-xl font-bold uppercase text-sm hover:bg-white/20 transition-all duration-300 shadow-lg">
+                        <a href="https://thuetaikhoan.com.vn" target="_blank" class="btn-3d inline-flex items-center gap-2.5 glass-dark text-white px-7 py-3.5 rounded-xl font-bold uppercase text-sm transition-colors duration-300 hover:bg-white/20">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                             Dành cho Thợ (Thuê Tool)
                         </a>
                     </div>
                 </div>
-                {{-- Trust Badges --}}
-                <div class="hidden md:flex absolute bottom-5 right-5 gap-5 glass-dark rounded-xl px-5 py-3">
-                     <div class="text-xs text-white text-center"><strong class="block text-yellow-400 text-xl font-black">1000+</strong> Thợ toàn quốc</div>
-                     <div class="w-px h-12 bg-white/20"></div>
-                     <div class="text-xs text-white text-center"><strong class="block text-yellow-400 text-xl font-black">100%</strong> Xử lý từ xa</div>
-                     <div class="w-px h-12 bg-white/20"></div>
-                     <div class="text-xs text-white text-center"><strong class="block text-yellow-400 text-xl font-black">8+</strong> Năm kinh nghiệm</div>
+
+                {{-- Trust Badges (Animated Counters) --}}
+                <div class="hidden md:flex absolute bottom-5 right-5 glass-dark rounded-2xl px-6 py-4 gap-6">
+                    <div class="text-center">
+                        <strong class="block text-yellow-400 text-2xl font-black counter-value" data-target="1000">0</strong>
+                        <span class="text-[11px] text-white/80 font-medium">Thợ toàn quốc</span>
+                    </div>
+                    <div class="w-px bg-white/15"></div>
+                    <div class="text-center">
+                        <strong class="block text-yellow-400 text-2xl font-black counter-value" data-target="100">0</strong>
+                        <span class="text-[11px] text-white/80 font-medium">% Xử lý từ xa</span>
+                    </div>
+                    <div class="w-px bg-white/15"></div>
+                    <div class="text-center">
+                        <strong class="block text-yellow-400 text-2xl font-black counter-value" data-target="8">0</strong>
+                        <span class="text-[11px] text-white/80 font-medium">Năm kinh nghiệm</span>
+                    </div>
                 </div>
             </div>
 
-            {{-- 2 Side Banners --}}
+            {{-- 2 Side Banners (with gradient border animation) --}}
             <div class="hidden lg:flex w-[30%] flex-col gap-5">
-                <div class="flex-1 bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] rounded-2xl p-6 text-white relative overflow-hidden flex items-center shadow-xl group border border-white/5 card-hover">
-                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-110 transition-transform duration-500">💻</div>
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#d70018]/10 rounded-full blur-2xl"></div>
+                <div class="flex-1 glass-card-dark rounded-2xl p-6 text-white relative overflow-hidden flex items-center group">
+                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-10 group-hover:scale-125 group-hover:rotate-12 transition-all duration-700">💻</div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#d70018]/8 rounded-full blur-2xl"></div>
                     <div class="relative z-10 w-full">
-                        <p class="text-yellow-400 font-bold mb-1.5 text-sm">Hệ Sinh Thái GSM</p>
+                        <span class="inline-flex items-center gap-1.5 bg-yellow-400/15 text-yellow-400 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3">
+                            <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span> Hệ Sinh Thái GSM
+                        </span>
                         <h3 class="font-black text-xl mb-2 text-white leading-tight">Xóa iCloud, MDM, Knox</h3>
                         <p class="text-xs text-gray-400 leading-relaxed">Mở khóa từ xa qua TeamViewer / UltraViewer</p>
                     </div>
                 </div>
-                <div class="flex-1 bg-white rounded-2xl p-6 border-2 border-[#d70018]/20 text-[#d70018] relative overflow-hidden flex items-center shadow-xl group hover:border-[#d70018] transition-all duration-300 card-hover">
-                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-5 group-hover:scale-110 transition-transform duration-500">🚗</div>
+                <div class="flex-1 bg-white rounded-2xl p-6 border-2 border-[#d70018]/15 text-[#d70018] relative overflow-hidden flex items-center group hover:border-[#d70018] transition-all duration-500 card-premium">
+                    <div class="absolute -right-4 -bottom-4 text-8xl opacity-5 group-hover:scale-125 group-hover:-rotate-12 transition-all duration-700">🚗</div>
                     <div class="relative z-10">
-                        <p class="text-gray-500 text-sm font-semibold mb-1.5">Giải Pháp Ô Tô</p>
+                        <span class="inline-flex items-center gap-1.5 bg-red-50 text-[#d70018] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-3">
+                            🔥 Hot Service
+                        </span>
                         <h3 class="font-black text-xl mb-2 text-[#d70018]">Vietmap Live Pro</h3>
                         <p class="text-xs font-medium text-gray-500">Cài đặt & Gia hạn bản quyền VIP</p>
                     </div>
@@ -69,121 +109,249 @@
     </div>
 </section>
 
-{{-- Problem Statement / Core Message --}}
-<section class="py-14 bg-white relative" id="van-de-khach-hang">
-    <div class="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent h-32"></div>
-    <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
-        <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5">
-            <span class="w-1.5 h-1.5 bg-[#d70018] rounded-full"></span>
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  STATS COUNTER BAR — NEW                               ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="relative bg-gradient-to-r from-[#1a1a2e] via-[#0f3460] to-[#1a1a2e] py-0 overflow-hidden" id="stats-bar">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10" id="stats-counter">
+            <div class="stat-card py-6 md:py-8">
+                <div class="flex justify-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-[#d70018] to-[#ff4757] rounded-xl flex items-center justify-center shadow-lg shadow-red-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                </div>
+                <span class="block text-3xl md:text-4xl font-black text-white counter-value" data-target="5000" data-suffix="+">0</span>
+                <span class="text-xs md:text-sm text-gray-400 font-medium mt-1 block">Thiết bị đã sửa</span>
+            </div>
+            <div class="stat-card py-6 md:py-8">
+                <div class="flex justify-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                </div>
+                <span class="block text-3xl md:text-4xl font-black text-white counter-value" data-target="98" data-suffix="%">0</span>
+                <span class="text-xs md:text-sm text-gray-400 font-medium mt-1 block">Khách hàng hài lòng</span>
+            </div>
+            <div class="stat-card py-6 md:py-8">
+                <div class="flex justify-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                </div>
+                <span class="block text-3xl md:text-4xl font-black text-white counter-value" data-target="8" data-suffix=" Năm">0</span>
+                <span class="text-xs md:text-sm text-gray-400 font-medium mt-1 block">Kinh nghiệm thực chiến</span>
+            </div>
+            <div class="stat-card py-6 md:py-8">
+                <div class="flex justify-center mb-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/20">
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                </div>
+                <span class="block text-3xl md:text-4xl font-black text-white counter-value" data-target="20" data-suffix="+">0</span>
+                <span class="text-xs md:text-sm text-gray-400 font-medium mt-1 block">Tool phần mềm chính hãng</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  VẤN ĐỀ PHỔ BIẾN — Problem Statement                 ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-16 bg-white relative" id="van-de-khach-hang">
+    <div class="absolute inset-0 bg-gradient-to-b from-gray-50/80 to-transparent h-40"></div>
+    <div class="container mx-auto px-4 max-w-4xl text-center relative z-10 reveal">
+        <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <span class="w-2 h-2 bg-[#d70018] rounded-full animate-pulse"></span>
             Vấn đề phổ biến
         </div>
-        <h2 class="text-2xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">MÁY MẤT NGUỒN, DÍNH ICLOUD, MDM HAY RƠI VỠ? <br class="hidden md:block"/><span class="text-[#d70018]">ĐỪNG VỘI BỎ ĐI!</span></h2>
+        <h2 class="text-2xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">MÁY MẤT NGUỒN, DÍNH ICLOUD, MDM HAY RƠI VỠ? <br class="hidden md:block"/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#d70018] to-[#ff4757]">ĐỪNG VỘI BỎ ĐI!</span></h2>
         <p class="text-gray-600 leading-relaxed text-sm md:text-base font-medium max-w-2xl mx-auto">
             Cho dù là lỗi phần cứng phức tạp (chạm chập main, gãy test point) hay mắc kẹt tột độ ở phần mềm (Knox Guard, iCloud, Brick), đội ngũ <strong class="text-gray-900">Điện Thoại Laptop VN</strong> (Chuyên gia Khang & Thanhtaj) đều có giải pháp. Nhờ việc trực tiếp thao tác và phân phối các loại tool mạnh nhất thế giới, bạn sẽ tiết kiệm thời gian lẫn chi phí.
         </p>
     </div>
 </section>
 
-{{-- Chọn thiết bị / Hãng --}}
-<section class="py-12 bg-gray-50 border-t border-gray-100" id="thiet-bi">
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  BRAND MARQUEE — Infinite Auto-Scroll                  ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-10 bg-gray-50 border-t border-gray-100" id="thiet-bi">
     <div class="container mx-auto px-4">
-        <div class="flex items-end justify-between mb-8">
-            <div>
-                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight section-title">Sửa Chữa Phần Cứng Theo Hãng</h2>
-            </div>
+        <div class="flex items-end justify-between mb-8 reveal">
+            <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight section-title">Sửa Chữa Phần Cứng Theo Hãng</h2>
         </div>
 
-        <div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-3 md:gap-4">
-            @foreach($brands as $brand)
-                <a href="/sua-dien-thoai/{{ $brand->slug }}" wire:navigate
-                   class="group flex flex-col items-center gap-2.5 p-4 bg-white rounded-xl border border-gray-200 hover:border-[#d70018] transition-all duration-300 card-hover">
-                    @if($brand->logo)
-                        <img src="{{ asset('storage/' . $brand->logo) }}" alt="{{ $brand->name }}" class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" loading="lazy">
-                    @else
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-red-50 to-pink-50 flex items-center justify-center text-[#d70018] font-bold text-lg group-hover:from-red-100 group-hover:to-pink-100 transition-colors">
-                            {{ substr($brand->name, 0, 1) }}
-                        </div>
-                    @endif
-                    <span class="text-xs font-semibold text-gray-600 group-hover:text-[#d70018] transition-colors text-center w-full truncate">{{ $brand->name }}</span>
-                </a>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-{{-- Danh mục dịch vụ B2B & B2C Core --}}
-<section class="py-14 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="flex items-end justify-between mb-10">
-            <div>
-                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight section-title">Dịch Vụ Mũi Nhọn Của Chúng Tôi</h2>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#d70018] transition-all duration-300 relative overflow-hidden group card-hover">
-                <div class="w-14 h-14 mb-5 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">📱</div>
-                <h3 class="font-bold text-gray-900 mb-2 text-lg">Sửa Phần Cứng Lấy Liền</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Thay màn hình, thay pin chính hãng, ép kính. Khám đúng bệnh, khách hàng quan sát trực tiếp. Báo giá minh bạch không phát sinh.</p>
-            </div>
-            <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:border-[#d70018] transition-all duration-300 relative overflow-hidden group card-hover">
-                <div class="w-14 h-14 mb-5 bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">💻</div>
-                <h3 class="font-bold text-gray-900 mb-2 text-lg">Unlock, Fix Khóa Từ Xa</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Xóa iCloud, dọn FRP, Knox Guard, MDM, Repair Boot cho mọi dòng Apple, Samsung, Xiaomi. Giải cứu thiết bị bị Brick chuyên nghiệp.</p>
-            </div>
-            <div class="bg-gradient-to-br from-[#1a1a2e] to-[#0f3460] rounded-2xl p-6 border border-white/5 hover:border-[#d70018]/50 transition-all duration-300 relative overflow-hidden group card-hover">
-                <div class="absolute -right-6 -bottom-6 text-7xl opacity-10 group-hover:opacity-20 transition-opacity">⚙️</div>
-                <div class="w-14 h-14 mb-5 bg-white/10 rounded-2xl flex items-center justify-center text-2xl text-yellow-400 group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300">🌐</div>
-                <h3 class="font-bold text-white mb-2 text-lg">Hệ Sinh Thái Thuê Tool</h3>
-                <p class="text-sm text-gray-400 leading-relaxed">Giải pháp B2B số 1 Việt Nam cho thợ. Hệ thống web thuê Box, Tool bản quyền tự động 24/7. Trực thuộc Thuetaikhoan.com.vn.</p>
-                <a href="https://thuetaikhoan.com.vn" target="_blank" class="text-yellow-400 text-sm font-bold mt-4 inline-flex items-center gap-1 hover:gap-2 transition-all">
-                    Khám phá ngay <span>→</span>
-                </a>
-            </div>
-            <div class="bg-white rounded-2xl p-6 border-2 border-[#d70018]/20 hover:border-[#d70018] transition-all duration-300 relative overflow-hidden group card-hover">
-                 <div class="w-14 h-14 mb-5 bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">🚘</div>
-                <h3 class="font-bold text-[#d70018] mb-2 text-lg">Dịch Vụ Ô Tô Việt Map</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Đại lý cung cấp bản quyền Vietmap Live Pro chính hãng, gia hạn phần mềm cảnh báo giao thông an toàn cho người sử dụng ô tô.</p>
+        {{-- Marquee auto-scroll --}}
+        <div class="marquee-container py-2">
+            <div class="marquee-track">
+                @foreach($brands as $brand)
+                    <a href="/sua-dien-thoai/{{ $brand->slug }}" wire:navigate
+                       class="group flex flex-col items-center gap-2.5 px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-[#d70018] transition-all duration-300 min-w-[110px] card-premium">
+                        @if($brand->logo)
+                            <img src="{{ asset('storage/' . $brand->logo) }}" alt="{{ $brand->name }}" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy">
+                        @else
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-red-50 to-pink-50 flex items-center justify-center text-[#d70018] font-bold text-lg group-hover:from-red-100 group-hover:to-pink-100 transition-colors">
+                                {{ substr($brand->name, 0, 1) }}
+                            </div>
+                        @endif
+                        <span class="text-xs font-semibold text-gray-600 group-hover:text-[#d70018] transition-colors text-center whitespace-nowrap">{{ $brand->name }}</span>
+                    </a>
+                @endforeach
+                {{-- Duplicate for seamless loop --}}
+                @foreach($brands as $brand)
+                    <a href="/sua-dien-thoai/{{ $brand->slug }}" wire:navigate
+                       class="group flex flex-col items-center gap-2.5 px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-[#d70018] transition-all duration-300 min-w-[110px] card-premium" aria-hidden="true">
+                        @if($brand->logo)
+                            <img src="{{ asset('storage/' . $brand->logo) }}" alt="{{ $brand->name }}" class="w-10 h-10 object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300" loading="lazy">
+                        @else
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-red-50 to-pink-50 flex items-center justify-center text-[#d70018] font-bold text-lg">
+                                {{ substr($brand->name, 0, 1) }}
+                            </div>
+                        @endif
+                        <span class="text-xs font-semibold text-gray-600 group-hover:text-[#d70018] transition-colors text-center whitespace-nowrap">{{ $brand->name }}</span>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
 </section>
 
-{{-- Bảng giá nổi bật --}}
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  DỊCH VỤ MŨI NHỌN — Redesigned Service Cards          ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-16 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-red-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex items-end justify-between mb-12 reveal">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-3">
+                    <span class="w-1.5 h-1.5 bg-[#d70018] rounded-full"></span>
+                    Dịch vụ chính
+                </div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Dịch Vụ Mũi Nhọn Của Chúng Tôi</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children reveal">
+            {{-- Card 1: Sửa Phần Cứng --}}
+            <div class="glass-card rounded-2xl relative overflow-hidden group">
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="bg-gradient-to-r from-emerald-500 to-green-600 text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">Phổ biến</span>
+                </div>
+                <div class="h-44 w-full overflow-hidden relative">
+                    <img src="/images/service_hardware.png" alt="Sửa phần cứng iPhone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+                </div>
+                <div class="p-6 pt-4">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg">Sửa Phần Cứng Lấy Liền</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Thay màn hình, thay pin chính hãng, ép kính. Khám đúng bệnh, khách hàng quan sát trực tiếp. Báo giá minh bạch không phát sinh.</p>
+                    <div class="flex items-center gap-2 text-[#d70018] text-sm font-bold group-hover:gap-3 transition-all">
+                        Tìm hiểu <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Card 2: Unlock --}}
+            <div class="glass-card rounded-2xl relative overflow-hidden group">
+                <div class="h-44 w-full overflow-hidden relative">
+                    <img src="/images/service_unlock.png" alt="Unlock iPhone iCloud Bypass" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+                </div>
+                <div class="p-6 pt-4">
+                    <h3 class="font-bold text-gray-900 mb-3 text-lg">Unlock, Fix Khóa Từ Xa</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Xóa iCloud, dọn FRP, Knox Guard, MDM, Repair Boot cho mọi dòng Apple, Samsung, Xiaomi. Giải cứu thiết bị bị Brick.</p>
+                    <div class="flex items-center gap-2 text-blue-600 text-sm font-bold group-hover:gap-3 transition-all">
+                        Tìm hiểu <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Card 3: Hệ Sinh Thái (Dark/Premium) --}}
+            <div class="glass-card-dark rounded-2xl relative overflow-hidden group">
+                <div class="absolute top-4 right-4 z-20">
+                    <span class="bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md animate-pulse-glow">B2B</span>
+                </div>
+                <div class="h-44 w-full overflow-hidden relative">
+                    <img src="/images/service_tools.png" alt="Hệ sinh thái Tool GSM" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/40 to-transparent"></div>
+                </div>
+                <div class="p-6 pt-4">
+                    <h3 class="font-bold text-white mb-3 text-lg">Hệ Sinh Thái Thuê Tool</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-4">Giải pháp B2B số 1 Việt Nam cho thợ. Hệ thống web thuê Box, Tool bản quyền tự động 24/7.</p>
+                    <a href="https://thuetaikhoan.com.vn" target="_blank" class="flex items-center gap-2 text-yellow-400 text-sm font-bold group-hover:gap-3 transition-all">
+                        Khám phá ngay <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Card 4: Vietmap --}}
+            <div class="bg-white rounded-2xl border-2 border-[#d70018]/15 relative overflow-hidden group card-premium hover:border-[#d70018] transition-all duration-500">
+                <div class="h-44 w-full overflow-hidden relative">
+                    <img src="/images/service_vietmap.png" alt="Vietmap Live Pro GPS ô tô" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent"></div>
+                </div>
+                <div class="p-6 pt-4">
+                    <h3 class="font-bold text-[#d70018] mb-3 text-lg">Dịch Vụ Ô Tô Việt Map</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-4">Đại lý cung cấp bản quyền Vietmap Live Pro chính hãng, gia hạn phần mềm cảnh báo giao thông.</p>
+                    <div class="flex items-center gap-2 text-[#d70018] text-sm font-bold group-hover:gap-3 transition-all">
+                        Tìm hiểu <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  BẢNG GIÁ NỔI BẬT — Premium Pricing Grid              ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
 @if($featuredRepairs->count())
-<section class="py-14 bg-gray-50 border-t border-gray-100" id="bang-gia">
-    <div class="container mx-auto px-4">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+<section class="py-16 bg-gray-50 border-t border-gray-100 relative" id="bang-gia">
+    <div class="absolute top-0 left-0 w-[300px] h-[300px] bg-red-50/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 reveal">
             <div>
-                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight section-title">Giá Sửa Chữa Tham Khảo</h2>
+                <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-3">
+                    <span class="w-1.5 h-1.5 bg-[#d70018] rounded-full"></span>
+                    Bảng giá ưu đãi
+                </div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Giá Sửa Chữa Tham Khảo</h2>
             </div>
-            <button x-data @click="$dispatch('open-price-popup')" class="inline-flex items-center justify-center gap-2 bg-[#d70018] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-red-500/20 hover:bg-red-700 hover:-translate-y-0.5 hover:shadow-xl transition-all animate-pulse-glow">
+            <button x-data @click="$dispatch('open-price-popup')" class="btn-3d inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#d70018] to-[#ff2d4a] text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-red-500/25 hover:shadow-xl transition-all">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 Tra Cứu Bảng Giá Nhanh
             </button>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            @foreach($featuredRepairs as $repair)
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 stagger-children reveal">
+            @foreach($featuredRepairs as $index => $repair)
                 <a href="/{{ $repair->slug }}" wire:navigate
-                   class="group bg-white rounded-2xl border border-gray-200 hover:border-[#d70018] transition-all duration-300 relative overflow-hidden flex flex-col h-full card-hover">
-                    
+                   class="group bg-white rounded-2xl border border-gray-200 hover:border-[#d70018] transition-all duration-400 relative overflow-hidden flex flex-col h-full card-premium">
+
                     @if($repair->discount_percent)
                         <div class="absolute top-3 left-3 z-10">
-                            <span class="bg-[#d70018] text-white text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-lg shadow-red-500/20">
+                            <span class="bg-gradient-to-r from-[#d70018] to-[#ff4757] text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg shadow-red-500/25 animate-pulse-glow">
                                 GIẢM {{ $repair->discount_percent }}%
+                            </span>
+                        </div>
+                    @endif
+
+                    @if($index === 0)
+                        <div class="absolute top-3 right-3 z-10">
+                            <span class="bg-gradient-to-r from-amber-400 to-orange-500 text-black text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                                🔥 Bán chạy
                             </span>
                         </div>
                     @endif
 
                     <div class="p-5 flex flex-col flex-1">
                         <div class="mt-3 mb-3">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wide bg-gray-50 px-2 py-1 rounded-md">{{ $repair->serviceType->name ?? '' }}</span>
+                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2.5 py-1 rounded-md">{{ $repair->serviceType->name ?? '' }}</span>
                         </div>
                         <h3 class="font-bold text-sm md:text-base text-gray-900 group-hover:text-[#d70018] transition-colors mb-3 line-clamp-2 flex-1">
                             {{ $repair->serviceType->name ?? '' }} {{ $repair->deviceModel->name ?? '' }}
                         </h3>
-                        
+
                         <div class="pt-3 border-t border-gray-100 mt-auto">
                             <div class="flex flex-col gap-1">
                                 <span class="text-lg md:text-xl font-black text-[#d70018]">{{ $repair->display_price }}</span>
@@ -202,103 +370,274 @@
 </section>
 @endif
 
-{{-- E-E-A-T Section (Tại sao tin tưởng) --}}
-<section class="py-16 bg-white border-t border-gray-100">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-4">
-                <span class="w-1.5 h-1.5 bg-[#d70018] rounded-full"></span>
-                Uy tín & Chất lượng
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  TESTIMONIALS — Customer Reviews                       ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-16 bg-white relative overflow-hidden">
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-yellow-50/50 rounded-full blur-3xl translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-12 reveal">
+            <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-600 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                Khách hàng nói gì
             </div>
-            <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Tại Sao Khách Hàng & Các Thợ Khác Chọn Chúng Tôi?</h2>
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Đánh Giá Từ Khách Hàng Thực Tế</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-300 group card-hover">
-                <div class="w-12 h-12 mb-4 bg-gradient-to-br from-[#d70018] to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children reveal">
+            {{-- Testimonial 1 --}}
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    @for($i = 0; $i < 5; $i++)
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    @endfor
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Lõi Kỹ Thuật Chuyên Sâu</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Tự biên soạn sơ đồ Test Point EDL 9008 cho hàng trăm mã máy, am hiểu tận gốc rễ bảng mạch.</p>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">"Mang iPhone 13 Pro bị mất nguồn hoàn toàn, tưởng phải thay mainboard. Anh Khang kiểm tra chỉ 10 phút, phát hiện lỗi IC nguồn, sửa xong trong 1h. <strong class="text-gray-900">Tiết kiệm 4 triệu</strong> so với báo giá nơi khác!"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#d70018] to-[#ff6b6b] flex items-center justify-center text-white font-bold text-sm shadow-md">HM</div>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900">Hữu Minh</p>
+                        <p class="text-xs text-gray-500">Thợ sửa — Đồng Nai</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-300 group card-hover">
-                <div class="w-12 h-12 mb-4 bg-gradient-to-br from-[#d70018] to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+
+            {{-- Testimonial 2 --}}
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    @for($i = 0; $i < 5; $i++)
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    @endfor
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Công Nghệ Mở Khóa Đỉnh Cao</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Quản lý hệ sinh thái cho thuê Tool (UnlockTool, DFT Pro, Cheetah...). Đầy đủ đồ chơi phần mềm nhất.</p>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">"Thuê UnlockTool trên thuetaikhoan.com.vn quá tiện. Mua xong nhận tài khoản tự động không cần chờ. Đã dùng để bypass FRP hơn 200 máy Samsung. <strong class="text-gray-900">Service ổn định, support nhanh.</strong>"</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md">TT</div>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900">Trung Tín</p>
+                        <p class="text-xs text-gray-500">Kỹ thuật viên — TP.HCM</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-300 group card-hover">
-                <div class="w-12 h-12 mb-4 bg-gradient-to-br from-[#d70018] to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+
+            {{-- Testimonial 3 --}}
+            <div class="testimonial-card">
+                <div class="testimonial-stars">
+                    @for($i = 0; $i < 5; $i++)
+                        <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    @endfor
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Thay Thế Không Sửa Mò</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">8 năm kinh nghiệm giúp chuẩn đoán đúng bệnh trong tíc tắc, xử lý triệt để, không lãng phí ví tiền.</p>
-            </div>
-            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-300 group card-hover">
-                <div class="w-12 h-12 mb-4 bg-gradient-to-br from-[#d70018] to-red-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-red-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <p class="text-sm text-gray-600 leading-relaxed mb-5">"Mang Galaxy S24 Ultra vỡ nát màn hình, anh em sửa rất chuyên nghiệp. Ép kính đẹp như mới, bảo hành 6 tháng. <strong class="text-gray-900">Giá cả hợp lý</strong>, không phát sinh thêm. Sẽ mang khách tới ủng hộ."</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center text-white font-bold text-sm shadow-md">NL</div>
+                    <div>
+                        <p class="text-sm font-bold text-gray-900">Ngọc Linh</p>
+                        <p class="text-xs text-gray-500">Khách hàng — Bình Dương</p>
+                    </div>
                 </div>
-                <h3 class="font-bold text-gray-900 mb-2">Cộng Đồng Vững Mạnh</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Hỗ trợ cộng đồng Zalo lớn mạnh. Cung cấp giải pháp cho thợ (B2B) và bảo hành uy tín cho người dùng (B2C).</p>
             </div>
         </div>
     </div>
 </section>
 
-{{-- Blog / Kiến thức Test Point --}}
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  E-E-A-T SECTION — Visual Overhaul                     ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white border-t border-gray-100 relative overflow-hidden">
+    <div class="absolute top-20 left-0 w-[300px] h-[300px] bg-blue-50/50 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-14 reveal">
+            <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="w-2 h-2 bg-[#d70018] rounded-full"></span>
+                Uy tín & Chất lượng
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Tại Sao Khách Hàng & Các Thợ Khác Chọn Chúng Tôi?</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 stagger-children reveal">
+            {{-- E-E-A-T Card 1 --}}
+            <div class="group flex gap-5 bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-400 card-premium">
+                <div class="shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-[#d70018] to-[#ff4757] rounded-2xl flex items-center justify-center text-white shadow-xl shadow-red-500/15 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-2 text-lg">Lõi Kỹ Thuật Chuyên Sâu</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">Tự biên soạn sơ đồ Test Point EDL 9008 cho hàng trăm mã máy, am hiểu tận gốc rễ bảng mạch.</p>
+                    <ul class="space-y-1.5 text-xs text-gray-500">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#d70018] rounded-full"></span> Test Point cho Samsung, Xiaomi, Oppo...</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-[#d70018] rounded-full"></span> Sơ đồ riêng, không copy từ internet</li>
+                    </ul>
+                </div>
+            </div>
+
+            {{-- E-E-A-T Card 2 --}}
+            <div class="group flex gap-5 bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-400 card-premium">
+                <div class="shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-blue-500/15 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-2 text-lg">Công Nghệ Mở Khóa Đỉnh Cao</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">Quản lý hệ sinh thái cho thuê Tool (UnlockTool, DFT Pro, Cheetah...). Đầy đủ đồ chơi phần mềm nhất.</p>
+                    <ul class="space-y-1.5 text-xs text-gray-500">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Bypass iCloud mọi phiên bản iOS</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Knox Guard & MDM removal 100%</li>
+                    </ul>
+                </div>
+            </div>
+
+            {{-- E-E-A-T Card 3 --}}
+            <div class="group flex gap-5 bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-400 card-premium">
+                <div class="shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-amber-500/15 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-2 text-lg">Thay Thế Không Sửa Mò</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">8 năm kinh nghiệm giúp chuẩn đoán đúng bệnh trong tíc tắc, xử lý triệt để, không lãng phí ví tiền.</p>
+                    <ul class="space-y-1.5 text-xs text-gray-500">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-amber-500 rounded-full"></span> Đúng bệnh từ lần khám đầu tiên</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-amber-500 rounded-full"></span> Bảo hành minh bạch, rõ ràng</li>
+                    </ul>
+                </div>
+            </div>
+
+            {{-- E-E-A-T Card 4 --}}
+            <div class="group flex gap-5 bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 hover:border-[#d70018]/30 transition-all duration-400 card-premium">
+                <div class="shrink-0">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-emerald-500/15 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-900 mb-2 text-lg">Cộng Đồng Vững Mạnh</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">Hỗ trợ cộng đồng Zalo lớn mạnh. Cung cấp giải pháp cho thợ (B2B) và bảo hành uy tín cho người dùng (B2C).</p>
+                    <ul class="space-y-1.5 text-xs text-gray-500">
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-emerald-500 rounded-full"></span> Zalo Group hỗ trợ 24/7</li>
+                        <li class="flex items-center gap-2"><span class="w-1 h-1 bg-emerald-500 rounded-full"></span> Cầu nối B2B - B2C đáng tin cậy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {{-- Expert Badge --}}
+        <div class="mt-10 flex justify-center reveal">
+            <div class="inline-flex items-center gap-4 bg-gradient-to-r from-gray-50 to-white rounded-2xl px-8 py-5 border border-gray-100 shadow-sm">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#d70018] to-[#ff4757] flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-red-500/20">K</div>
+                <div>
+                    <p class="font-bold text-gray-900">Khang & Thanhtaj</p>
+                    <p class="text-xs text-gray-500">Kỹ thuật viên trưởng · 8+ năm kinh nghiệm</p>
+                    <p class="text-xs text-[#d70018] font-semibold mt-0.5">Founder Thuetaikhoan Ecosystem</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  BLOG — Magazine Layout                                ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
 @if($latestPosts->count())
-<section class="py-14 bg-gray-50 border-t border-gray-100">
+<section class="py-16 bg-white border-t border-gray-100">
     <div class="container mx-auto px-4">
-        <div class="flex items-end justify-between mb-10">
+        <div class="flex items-end justify-between mb-12 reveal">
             <div>
-                <h2 class="text-2xl font-black text-gray-900 uppercase tracking-tight section-title">Chia Sẻ Kiến Thức Tới Cộng Đồng</h2>
+                <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-3">
+                    <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                    Kiến thức mới
+                </div>
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Chia Sẻ Kiến Thức Tới Cộng Đồng</h2>
             </div>
             <a href="/blog" wire:navigate class="text-sm font-bold text-[#d70018] hover:text-red-700 transition-colors hidden sm:inline-flex items-center gap-1 hover:gap-2">
                 Xem tất cả <span>→</span>
             </a>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            @foreach($latestPosts as $post)
-                <a href="/blog/{{ $post->slug }}" wire:navigate class="group">
-                    <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:border-[#d70018]/30 card-hover">
-                        <div class="aspect-[16/9] w-full bg-gray-100 overflow-hidden relative">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-[#d70018]/10 transition-colors z-10"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal">
+            {{-- Featured Post (Large) --}}
+            @if($latestPosts->first())
+                @php $featured = $latestPosts->first(); @endphp
+                <a href="/blog/{{ $featured->slug }}" wire:navigate class="block group blog-featured rounded-2xl overflow-hidden shadow-lg">
+                    @if($featured->thumbnail)
+                        <img src="{{ asset('storage/' . $featured->thumbnail) }}" alt="{{ $featured->title }}" loading="lazy">
+                    @else
+                        <div class="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#0f3460]"></div>
+                    @endif
+                    <div class="blog-featured-overlay"></div>
+                    <div class="blog-featured-content">
+                        <span class="inline-block bg-[#d70018] text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-3">Nổi bật</span>
+                        <h3 class="font-black text-xl md:text-2xl text-white mb-2 leading-tight line-clamp-2 group-hover:text-yellow-300 transition-colors">{{ $featured->title }}</h3>
+                        <p class="text-sm text-white/70 line-clamp-2">{{ $featured->excerpt }}</p>
+                    </div>
+                </a>
+            @endif
+
+            {{-- Side Posts (Smaller) --}}
+            <div class="flex flex-col gap-4">
+                @foreach($latestPosts->skip(1) as $post)
+                    <a href="/blog/{{ $post->slug }}" wire:navigate class="group flex gap-4 bg-gray-50 rounded-xl overflow-hidden hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gray-200 card-premium">
+                        <div class="w-[130px] md:w-[160px] shrink-0 aspect-[4/3] bg-gray-100 overflow-hidden relative">
                             @if($post->thumbnail)
                                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
                             @else
-                                <div class="w-full h-full flex items-center justify-center text-3xl bg-gradient-to-br from-red-50 to-gray-100">🗂️</div>
+                                <div class="w-full h-full flex items-center justify-center text-2xl bg-gradient-to-br from-red-50 to-gray-100">🗂️</div>
                             @endif
                         </div>
-                        <div class="p-4 flex-1 flex flex-col">
-                            <h3 class="font-bold text-sm text-gray-900 group-hover:text-[#d70018] transition-colors line-clamp-2 mb-2">{{ $post->title }}</h3>
-                            <p class="text-xs text-gray-500 line-clamp-2 mt-auto">{{ $post->excerpt }}</p>
+                        <div class="py-3 pr-4 flex flex-col justify-center">
+                            <h3 class="font-bold text-sm text-gray-900 group-hover:text-[#d70018] transition-colors line-clamp-2 mb-1.5">{{ $post->title }}</h3>
+                            <p class="text-xs text-gray-500 line-clamp-2">{{ $post->excerpt }}</p>
                         </div>
-                    </div>
-                </a>
-            @endforeach
+                    </a>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
 @endif
 
-{{-- CTA Độc Quyền --}}
-<section class="py-16 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#d70018] to-[#1a1a2e] animate-gradient-shift"></div>
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2240%22%20height=%2240%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%2220%22%20cy=%2220%22%20r=%221%22%20fill=%22rgba(255,255,255,0.05)%22/%3E%3C/svg%3E')] "></div>
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  CTA — Animated Gradient                               ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-[#1a1a2e] via-[#d70018] to-[#0f3460] animate-gradient-shift"></div>
+
+    {{-- Floating decorative shapes --}}
+    <div class="floating-shape floating-shape--1 w-40 h-40 bg-white top-10 left-[10%]"></div>
+    <div class="floating-shape floating-shape--2 w-24 h-24 bg-yellow-400 bottom-10 right-[15%]"></div>
+    <div class="floating-shape floating-shape--3 w-32 h-32 bg-white top-1/2 right-[30%]"></div>
+
+    {{-- Dot pattern --}}
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2240%22%20height=%2240%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle%20cx=%2220%22%20cy=%2220%22%20r=%221%22%20fill=%22rgba(255,255,255,0.06)%22/%3E%3C/svg%3E')]"></div>
+
     <div class="container mx-auto px-4 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide mb-5 backdrop-blur-sm border border-white/10">
-            <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse"></span>
-            Liên hệ ngay
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm border border-white/15">
+            <span class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></span>
+            Liên hệ ngay hôm nay
         </div>
-        <h2 class="text-2xl md:text-4xl font-black text-white uppercase tracking-tight mb-4">Tư Vấn Bắt Bệnh Từ Kỹ Thuật Viên Trưởng</h2>
-        <p class="text-white/80 mb-8 text-sm md:text-base font-medium max-w-xl mx-auto">Báo đúng giá - Chữa đúng bệnh. Đảm bảo uy tín thương hiệu Thuetaikhoan.</p>
+
+        <h2 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-5 drop-shadow-lg">Tư Vấn Bắt Bệnh <br class="hidden md:block"/>Từ Kỹ Thuật Viên Trưởng</h2>
+        <p class="text-white/80 mb-5 text-sm md:text-base font-medium max-w-xl mx-auto">Báo đúng giá - Chữa đúng bệnh. Đảm bảo uy tín thương hiệu Thuetaikhoan.</p>
+
+        {{-- Social proof --}}
+        <div class="mb-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 border border-white/10">
+            <div class="flex -space-x-2">
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 border-2 border-white/30 flex items-center justify-center text-[9px] font-bold">A</div>
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 border-2 border-white/30 flex items-center justify-center text-[9px] font-bold text-white">B</div>
+                <div class="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-400 to-green-500 border-2 border-white/30 flex items-center justify-center text-[9px] font-bold text-white">C</div>
+            </div>
+            <span class="text-white/90 text-xs font-semibold">500+ khách hàng tin tưởng tháng này</span>
+        </div>
+
         <div class="flex justify-center gap-4 flex-wrap">
-            <a href="tel:0777333763" class="inline-flex items-center gap-2.5 bg-yellow-400 text-black px-8 py-4 rounded-xl text-lg font-black hover:bg-white hover:text-[#d70018] transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 animate-pulse-glow">
+            <a href="tel:0777333763" class="btn-3d inline-flex items-center gap-3 bg-yellow-400 text-black px-9 py-4.5 rounded-xl text-lg font-black shadow-xl shadow-yellow-400/30 hover:bg-white hover:text-[#d70018] transition-colors duration-300">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                 Tư vấn CSKH: 0777.333.763
             </a>
-            <a href="tel:0934660219" class="inline-flex items-center gap-2.5 glass-dark text-white px-8 py-4 rounded-xl text-lg font-black hover:bg-white hover:text-[#d70018] transition-all duration-300 shadow-xl">
+            <a href="tel:0934660219" class="btn-3d inline-flex items-center gap-3 glass-dark text-white px-9 py-4.5 rounded-xl text-lg font-black shadow-xl hover:bg-white hover:text-[#d70018] transition-colors duration-300">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
                 Hỗ trợ Kỹ thuật: 0934.660.219
             </a>
@@ -308,5 +647,95 @@
 
 {{-- Bảng Giá Nhanh Livewire Component (Modal) --}}
 @livewire('price-list-popup')
+
+{{-- ╔═══════════════════════════════════════════════════════╗
+    ║  SCROLL ANIMATION + COUNTER JAVASCRIPT                 ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ── Scroll Reveal (IntersectionObserver) ──
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
+    if (revealElements.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    }
+
+    // ── Counter Animation ──
+    const counters = document.querySelectorAll('.counter-value[data-target]');
+    let counterStarted = false;
+
+    function animateCounters() {
+        if (counterStarted) return;
+        counterStarted = true;
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target);
+            const suffix = counter.dataset.suffix || '';
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(eased * target);
+                counter.textContent = current.toLocaleString() + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    counter.textContent = target.toLocaleString() + suffix;
+                    counter.classList.add('counted');
+                }
+            }
+            requestAnimationFrame(updateCount);
+        });
+    }
+
+    // Trigger counters when stats section is visible
+    const statsSection = document.getElementById('stats-counter');
+    if (statsSection) {
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        counterObserver.observe(statsSection);
+    }
+
+    // Also animate hero counters separately
+    const heroCounters = document.querySelectorAll('.glass-dark .counter-value[data-target]');
+    if (heroCounters.length) {
+        setTimeout(() => {
+            heroCounters.forEach(counter => {
+                const target = parseInt(counter.dataset.target);
+                const suffix = counter.dataset.suffix || '';
+                const duration = 1500;
+                const startTime = performance.now();
+                function updateHeroCount(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.round(eased * target).toLocaleString() + suffix;
+                    if (progress < 1) requestAnimationFrame(updateHeroCount);
+                    else counter.textContent = target.toLocaleString() + suffix;
+                }
+                requestAnimationFrame(updateHeroCount);
+            });
+        }, 500);
+    }
+});
+</script>
 
 @endsection
