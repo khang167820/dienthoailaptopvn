@@ -50,12 +50,23 @@ Route::get('/sitemap.xml', function () {
     return $sitemap->toResponse(request());
 })->name('sitemap');
 
-// Trang dịch vụ chi tiết (VD: /thay-man-hinh-iphone-15-pro-max)
-// ĐẶT ROUTE NÀY CUỐI ĐỂ KHÔNG CONFLICT
-Route::get('/{repair:slug}', [PageController::class, 'repair'])->name('repair');
+// Catch-all: Danh mục HOẶC Dịch vụ chi tiết (cùng pattern /{slug})
+// Ưu tiên: Category trước → Repair sau → 404
+Route::get('/{slug}', function (string $slug) {
+    // Thử tìm Category trước (VD: /sua-dien-thoai, /sua-laptop, /sua-tablet)
+    $category = \App\Models\Category::where('slug', $slug)->where('is_active', true)->first();
+    if ($category) {
+        return app(PageController::class)->category($category);
+    }
 
-// Danh mục (VD: /sua-dien-thoai)
-Route::get('/{category:slug}', [PageController::class, 'category'])->name('category');
+    // Thử tìm Repair (VD: /thay-man-hinh-iphone-15-pro-max)
+    $repair = \App\Models\Repair::where('slug', $slug)->where('is_active', true)->first();
+    if ($repair) {
+        return app(PageController::class)->repair($repair);
+    }
+
+    abort(404);
+})->name('slug-resolver')->where('slug', '[a-z0-9\-]+');
 
 // Thương hiệu (VD: /sua-dien-thoai/apple)
 Route::get('/{category:slug}/{brand:slug}', [PageController::class, 'brand'])->name('brand');

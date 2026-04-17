@@ -156,6 +156,127 @@
 </section>
 
 {{-- ╔═══════════════════════════════════════════════════════╗
+    ║  QUICK SERVICE NAVIGATION — Category Buttons           ║
+    ╚═══════════════════════════════════════════════════════╝ --}}
+<section class="py-14 md:py-16 bg-white relative overflow-hidden" id="danh-muc-dich-vu">
+    {{-- Decorative blobs --}}
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-red-50/40 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-3xl pointer-events-none translate-y-1/2"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+        {{-- Section Header --}}
+        <div class="text-center mb-10 reveal">
+            <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+                <span class="w-2 h-2 bg-[#d70018] rounded-full animate-pulse"></span>
+                Dịch vụ theo danh mục
+            </div>
+            <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Bạn Cần Sửa Chữa Gì?</h2>
+            <p class="text-gray-500 text-sm mt-2 max-w-lg mx-auto">Chọn danh mục phù hợp để xem bảng giá chi tiết và đặt lịch sửa chữa</p>
+        </div>
+
+        {{-- Service Category Grid --}}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 stagger-children reveal">
+
+            {{-- 1. Sửa Điện Thoại --}}
+            <a href="/sua-dien-thoai" wire:navigate id="btn-sua-dien-thoai"
+               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                {{-- Background Image --}}
+                <img src="/images/category_phone_repair.png" alt="Sửa Điện Thoại" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                {{-- Gradient Overlay --}}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-[#d70018]/90 group-hover:via-[#d70018]/40 transition-all duration-500"></div>
+                {{-- Floating Icon --}}
+                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
+                    🔧
+                </div>
+                {{-- Badge --}}
+                <div class="absolute top-5 left-5">
+                    <span class="bg-gradient-to-r from-emerald-500 to-green-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">Phổ biến nhất</span>
+                </div>
+                {{-- Content --}}
+                <div class="relative z-10 p-6">
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Điện Thoại</h3>
+                    <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">iPhone, Samsung, Xiaomi, Oppo... Thay màn hình, pin, sửa main, unlock phần mềm</p>
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-[#d70018] transition-all duration-300 border border-white/20">
+                        Xem bảng giá
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            {{-- 2. Sửa Laptop --}}
+            <a href="/sua-laptop" wire:navigate id="btn-sua-laptop"
+               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                {{-- Background Image --}}
+                <img src="/images/category_laptop_repair.png" alt="Sửa Laptop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                {{-- Gradient Overlay --}}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-blue-600/90 group-hover:via-blue-600/40 transition-all duration-500"></div>
+                {{-- Floating Icon --}}
+                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
+                    🔧
+                </div>
+                {{-- Content --}}
+                <div class="relative z-10 p-6">
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Laptop</h3>
+                    <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">MacBook, Dell, HP, Asus... Vệ sinh, thay keo tản nhiệt, sửa main, nâng cấp SSD/RAM</p>
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-blue-600 transition-all duration-300 border border-white/20">
+                        Xem bảng giá
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            {{-- 3. Sửa Tablet --}}
+            <a href="/sua-tablet" wire:navigate id="btn-sua-tablet"
+               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                {{-- Background Image --}}
+                <img src="/images/category_tablet_repair.png" alt="Sửa Tablet" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                {{-- Gradient Overlay --}}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-amber-600/90 group-hover:via-amber-600/40 transition-all duration-500"></div>
+                {{-- Floating Icon --}}
+                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
+                    📟
+                </div>
+                {{-- Content --}}
+                <div class="relative z-10 p-6">
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Tablet</h3>
+                    <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">iPad, Samsung Tab, Huawei... Thay kính, màn hình, pin, sửa lỗi phần mềm chuyên sâu</p>
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-amber-600 transition-all duration-300 border border-white/20">
+                        Xem bảng giá
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            {{-- 4. Thủ Thuật --}}
+            <a href="/blog" wire:navigate id="btn-thu-thuat"
+               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                {{-- Background Image --}}
+                <img src="/images/category_tips_tricks.png" alt="Thủ Thuật" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
+                {{-- Gradient Overlay --}}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-purple-600/90 group-hover:via-purple-600/40 transition-all duration-500"></div>
+                {{-- Floating Icon --}}
+                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
+                    💡
+                </div>
+                {{-- Badge --}}
+                <div class="absolute top-5 left-5">
+                    <span class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">Miễn phí</span>
+                </div>
+                {{-- Content --}}
+                <div class="relative z-10 p-6">
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Thủ Thuật</h3>
+                    <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">Hướng dẫn tự sửa, test point, unlock, bypass và các mẹo kỹ thuật từ chuyên gia</p>
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-purple-600 transition-all duration-300 border border-white/20">
+                        Khám phá ngay
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ╔═══════════════════════════════════════════════════════╗
     ║  VẤN ĐỀ PHỔ BIẾN — Problem Statement                 ║
     ╚═══════════════════════════════════════════════════════╝ --}}
 <section class="py-16 bg-white relative" id="van-de-khach-hang">
