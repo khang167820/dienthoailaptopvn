@@ -241,15 +241,5 @@
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const els = document.querySelectorAll('.reveal, .stagger-children');
-    if (els.length) {
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); } });
-        }, { threshold: 0.1 });
-        els.forEach(el => obs.observe(el));
-    }
-});
-</script>
 @endsection
+

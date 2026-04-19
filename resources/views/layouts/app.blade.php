@@ -275,6 +275,61 @@
                 btn.classList.toggle('visible', window.scrollY > 400);
             }
         });
+
+        // ═══════════════════════════════════════════
+        // SCROLL REVEAL OBSERVER — Robust version
+        // Fixes: elements not appearing when scrolling
+        // ═══════════════════════════════════════════
+        function initRevealObserver() {
+            const els = document.querySelectorAll('.reveal:not(.revealed), .stagger-children:not(.revealed)');
+            if (!els.length) return;
+
+            // 1. Immediately reveal elements already in or above the viewport
+            //    (handles fast scroll, back-navigation, or already-scrolled pages)
+            els.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight + 50) {
+                    el.classList.add('revealed');
+                }
+            });
+
+            // 2. Observe remaining hidden elements
+            const remaining = document.querySelectorAll('.reveal:not(.revealed), .stagger-children:not(.revealed)');
+            if (!remaining.length) return;
+
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('revealed');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.01, rootMargin: '0px 0px -10px 0px' });
+
+            remaining.forEach(el => obs.observe(el));
+
+            // 3. Safety fallback: reveal all remaining elements after 3s
+            //    Prevents permanent invisible content if observer fails
+            setTimeout(() => {
+                document.querySelectorAll('.reveal:not(.revealed), .stagger-children:not(.revealed)').forEach(el => {
+                    el.classList.add('revealed');
+                });
+            }, 3000);
+        }
+
+        // Fire on initial page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initRevealObserver);
+        } else {
+            // DOM already loaded (e.g. deferred script)
+            initRevealObserver();
+        }
+
+        // Fire on Livewire wire:navigate page transitions
+        document.addEventListener('livewire:navigated', function() {
+            // Small delay to let DOM render after Livewire swap
+            setTimeout(initRevealObserver, 100);
+        });
     </script>
 
     @livewireScripts

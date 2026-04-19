@@ -158,20 +158,24 @@
 {{-- ╔═══════════════════════════════════════════════════════╗
     ║  QUICK SERVICE NAVIGATION — Category Buttons           ║
     ╚═══════════════════════════════════════════════════════╝ --}}
-<section class="py-14 md:py-16 bg-white relative overflow-hidden" id="danh-muc-dich-vu">
+<section class="py-14 md:py-20 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden" id="danh-muc-dich-vu">
     {{-- Decorative blobs --}}
     <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-red-50/40 rounded-full blur-3xl pointer-events-none -translate-y-1/2"></div>
     <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-3xl pointer-events-none translate-y-1/2"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-amber-50/20 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="container mx-auto px-4 relative z-10">
         {{-- Section Header --}}
-        <div class="text-center mb-10 reveal">
-            <div class="inline-flex items-center gap-2 bg-red-50 text-[#d70018] px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
-                <span class="w-2 h-2 bg-[#d70018] rounded-full animate-pulse"></span>
+        <div class="text-center mb-12 reveal">
+            <div class="inline-flex items-center gap-2 bg-gradient-to-r from-red-50 to-pink-50 text-[#d70018] px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest mb-5 border border-red-100/50">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d70018] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#d70018]"></span>
+                </span>
                 Dịch vụ theo danh mục
             </div>
-            <h2 class="text-2xl md:text-3xl font-black text-gray-900 uppercase tracking-tight">Bạn Cần Sửa Chữa Gì?</h2>
-            <p class="text-gray-500 text-sm mt-2 max-w-lg mx-auto">Chọn danh mục phù hợp để xem bảng giá chi tiết và đặt lịch sửa chữa</p>
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 uppercase tracking-tight mb-3">Bạn Cần Sửa Chữa Gì?</h2>
+            <p class="text-gray-500 text-sm md:text-base mt-2 max-w-xl mx-auto leading-relaxed">Chọn danh mục phù hợp để xem bảng giá chi tiết và đặt lịch sửa chữa ngay hôm nay</p>
         </div>
 
         {{-- Service Category Grid --}}
@@ -179,99 +183,191 @@
 
             {{-- 1. Sửa Điện Thoại --}}
             <a href="/sua-dien-thoai" wire:navigate id="btn-sua-dien-thoai"
-               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+               class="service-card-tilt group relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[360px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                 {{-- Background Image --}}
                 <img src="/images/category_phone_repair.png" alt="Sửa Điện Thoại" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                 {{-- Gradient Overlay --}}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-[#d70018]/90 group-hover:via-[#d70018]/40 transition-all duration-500"></div>
-                {{-- Floating Icon --}}
-                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
-                    🔧
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 group-hover:from-[#d70018]/95 group-hover:via-[#d70018]/40 transition-all duration-500"></div>
+                {{-- Shimmer sweep on hover --}}
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full" style="transition: transform 0.8s ease, opacity 0.3s ease;"></div>
+                {{-- Floating Icon with pulse ring --}}
+                <div class="absolute top-5 right-5 icon-with-pulse">
+                    <div class="w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white/25 transition-all duration-500 border border-white/20 shadow-lg">
+                        📱
+                    </div>
                 </div>
                 {{-- Badge --}}
                 <div class="absolute top-5 left-5">
-                    <span class="bg-gradient-to-r from-emerald-500 to-green-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">Phổ biến nhất</span>
+                    <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-green-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md animate-pulse-glow">
+                        <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                        Phổ biến nhất
+                    </span>
                 </div>
                 {{-- Content --}}
                 <div class="relative z-10 p-6">
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Điện Thoại</h3>
+                    {{-- Mini stats --}}
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="inline-flex items-center gap-1 text-[10px] text-white/70 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            500+ máy/tháng
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] text-yellow-300/90 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            ⚡ Từ 150k
+                        </span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md group-hover:text-yellow-300 transition-colors duration-300">Sửa Điện Thoại</h3>
                     <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">iPhone, Samsung, Xiaomi, Oppo... Thay màn hình, pin, sửa main, unlock phần mềm</p>
-                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-[#d70018] transition-all duration-300 border border-white/20">
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-[#d70018] transition-all duration-300 border border-white/20 group-hover:shadow-lg">
                         Xem bảng giá
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </div>
                 </div>
             </a>
 
             {{-- 2. Sửa Laptop --}}
             <a href="/sua-laptop" wire:navigate id="btn-sua-laptop"
-               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+               class="service-card-tilt group relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[360px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                 {{-- Background Image --}}
                 <img src="/images/category_laptop_repair.png" alt="Sửa Laptop" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                 {{-- Gradient Overlay --}}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-blue-600/90 group-hover:via-blue-600/40 transition-all duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 group-hover:from-blue-700/95 group-hover:via-blue-600/40 transition-all duration-500"></div>
+                {{-- Shimmer sweep --}}
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full" style="transition: transform 0.8s ease, opacity 0.3s ease;"></div>
                 {{-- Floating Icon --}}
-                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
-                    🔧
+                <div class="absolute top-5 right-5 icon-with-pulse">
+                    <div class="w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white/25 transition-all duration-500 border border-white/20 shadow-lg">
+                        💻
+                    </div>
+                </div>
+                {{-- Badge --}}
+                <div class="absolute top-5 left-5">
+                    <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                        <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                        Chuyên sâu
+                    </span>
                 </div>
                 {{-- Content --}}
                 <div class="relative z-10 p-6">
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Laptop</h3>
+                    {{-- Mini stats --}}
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="inline-flex items-center gap-1 text-[10px] text-white/70 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            200+ máy/tháng
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] text-blue-300/90 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            ⚡ Từ 250k
+                        </span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md group-hover:text-blue-300 transition-colors duration-300">Sửa Laptop</h3>
                     <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">MacBook, Dell, HP, Asus... Vệ sinh, thay keo tản nhiệt, sửa main, nâng cấp SSD/RAM</p>
-                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-blue-600 transition-all duration-300 border border-white/20">
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-blue-600 transition-all duration-300 border border-white/20 group-hover:shadow-lg">
                         Xem bảng giá
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </div>
                 </div>
             </a>
 
             {{-- 3. Sửa Tablet --}}
             <a href="/sua-tablet" wire:navigate id="btn-sua-tablet"
-               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+               class="service-card-tilt group relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[360px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                 {{-- Background Image --}}
                 <img src="/images/category_tablet_repair.png" alt="Sửa Tablet" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                 {{-- Gradient Overlay --}}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-amber-600/90 group-hover:via-amber-600/40 transition-all duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 group-hover:from-amber-700/95 group-hover:via-amber-600/40 transition-all duration-500"></div>
+                {{-- Shimmer sweep --}}
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full" style="transition: transform 0.8s ease, opacity 0.3s ease;"></div>
                 {{-- Floating Icon --}}
-                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
-                    📟
+                <div class="absolute top-5 right-5 icon-with-pulse">
+                    <div class="w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white/25 transition-all duration-500 border border-white/20 shadow-lg">
+                        📟
+                    </div>
+                </div>
+                {{-- Badge --}}
+                <div class="absolute top-5 left-5">
+                    <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                        <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                        iPad chuyên sâu
+                    </span>
                 </div>
                 {{-- Content --}}
                 <div class="relative z-10 p-6">
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Sửa Tablet</h3>
+                    {{-- Mini stats --}}
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="inline-flex items-center gap-1 text-[10px] text-white/70 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            100+ máy/tháng
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] text-amber-300/90 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            ⚡ Từ 200k
+                        </span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md group-hover:text-amber-300 transition-colors duration-300">Sửa Tablet</h3>
                     <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">iPad, Samsung Tab, Huawei... Thay kính, màn hình, pin, sửa lỗi phần mềm chuyên sâu</p>
-                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-amber-600 transition-all duration-300 border border-white/20">
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-amber-600 transition-all duration-300 border border-white/20 group-hover:shadow-lg">
                         Xem bảng giá
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </div>
                 </div>
             </a>
 
             {{-- 4. Thủ Thuật --}}
             <a href="/blog" wire:navigate id="btn-thu-thuat"
-               class="group relative rounded-2xl overflow-hidden min-h-[260px] md:min-h-[300px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+               class="service-card-tilt group relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[360px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                 {{-- Background Image --}}
                 <img src="/images/category_tips_tricks.png" alt="Thủ Thuật" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy">
                 {{-- Gradient Overlay --}}
-                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent group-hover:from-purple-600/90 group-hover:via-purple-600/40 transition-all duration-500"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 group-hover:from-purple-700/95 group-hover:via-purple-600/40 transition-all duration-500"></div>
+                {{-- Shimmer sweep --}}
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full" style="transition: transform 0.8s ease, opacity 0.3s ease;"></div>
                 {{-- Floating Icon --}}
-                <div class="absolute top-5 right-5 w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/20 shadow-lg">
-                    💡
+                <div class="absolute top-5 right-5 icon-with-pulse">
+                    <div class="w-14 h-14 bg-white/15 backdrop-blur-md rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-12 group-hover:bg-white/25 transition-all duration-500 border border-white/20 shadow-lg">
+                        💡
+                    </div>
                 </div>
                 {{-- Badge --}}
                 <div class="absolute top-5 left-5">
-                    <span class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">Miễn phí</span>
+                    <span class="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-500 to-indigo-600 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md animate-pulse-glow">
+                        <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                        Miễn phí
+                    </span>
                 </div>
                 {{-- Content --}}
                 <div class="relative z-10 p-6">
-                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md">Thủ Thuật</h3>
+                    {{-- Mini stats --}}
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="inline-flex items-center gap-1 text-[10px] text-white/70 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            50+ bài viết
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[10px] text-purple-300/90 font-medium bg-white/10 px-2 py-1 rounded-md backdrop-blur-sm">
+                            🔥 Cập nhật liên tục
+                        </span>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2 drop-shadow-md group-hover:text-purple-300 transition-colors duration-300">Thủ Thuật & Blog</h3>
                     <p class="text-white/80 text-xs md:text-sm leading-relaxed mb-4 line-clamp-2">Hướng dẫn tự sửa, test point, unlock, bypass và các mẹo kỹ thuật từ chuyên gia</p>
-                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-purple-600 transition-all duration-300 border border-white/20">
+                    <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-5 py-2.5 rounded-full text-xs font-bold group-hover:bg-white group-hover:text-purple-600 transition-all duration-300 border border-white/20 group-hover:shadow-lg">
                         Khám phá ngay
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </div>
                 </div>
             </a>
+        </div>
+
+        {{-- Quick Action Buttons Row --}}
+        <div class="mt-10 flex flex-wrap justify-center gap-3 reveal">
+            <a href="tel:0777333763" class="inline-flex items-center gap-2 bg-gradient-to-r from-[#d70018] to-[#ff2d4a] text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-red-500/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 btn-3d">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Gọi Báo Giá Ngay
+            </a>
+            <a href="https://zalo.me/0777333763" target="_blank" class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg shadow-blue-500/20 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 btn-3d">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.568 8.16c-.169-.398-.476-.634-.896-.634-.31 0-.581.126-.819.378l-3.856 4.1-1.459-1.459c-.259-.259-.577-.389-.954-.389-.378 0-.716.143-.993.42-.278.278-.416.607-.416.985 0 .378.137.704.416.975l2.396 2.396c.252.252.577.378.975.378.412 0 .763-.152 1.025-.457l4.84-5.152c.219-.232.328-.504.328-.816 0-.344-.195-.631-.586-.725z"/></svg>
+                Chat Zalo Tư Vấn
+            </a>
+            <button x-data @click="$dispatch('open-price-popup')" class="inline-flex items-center gap-2 bg-white text-gray-700 border-2 border-gray-200 hover:border-[#d70018] hover:text-[#d70018] px-6 py-3 rounded-xl font-bold text-sm shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                Tra Cứu Bảng Giá
+            </button>
         </div>
     </div>
 </section>
@@ -444,43 +540,90 @@
             </button>
         </div>
 
+        {{-- Service image mapping by slug keywords --}}
+        @php
+            $serviceImageMap = [
+                'thay-man' => '/images/services/thay-man.png',
+                'ep-kinh' => '/images/services/ep-kinh.png',
+                'ep-cam-ung' => '/images/services/ep-cam-ung.png',
+                'ep-co-cap' => '/images/services/ep-co-cap.png',
+                'thay-pin' => '/images/services/thay-pin.png',
+                'thay-lung' => '/images/services/thay-lung.png',
+                'thay-vo' => '/images/services/thay-vo.png',
+                'sua-face' => '/images/services/sua-face.png',
+                'sua-pan' => '/images/services/sua-main.png',
+                'cam-truoc' => '/images/services/camera.png',
+                'cam-sau' => '/images/services/camera.png',
+                'kinh-cam' => '/images/services/camera.png',
+                'lens' => '/images/services/camera.png',
+                've-sinh' => '/images/services/camera.png',
+                'loa' => '/images/services/loa-sac.png',
+                'duoi-sac' => '/images/services/loa-sac.png',
+                'fix-soc' => '/images/services/thay-man.png',
+                'fix-man' => '/images/services/thay-man.png',
+            ];
+
+            $getServiceImage = function($slug) use ($serviceImageMap) {
+                foreach ($serviceImageMap as $key => $image) {
+                    if (str_contains($slug, $key)) return $image;
+                }
+                return '/images/services/default.png';
+            };
+        @endphp
+
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 stagger-children reveal">
             @foreach($featuredRepairs as $index => $repair)
+                @php
+                    $serviceSlug = $repair->serviceType->slug ?? '';
+                    $serviceImg = $getServiceImage($serviceSlug);
+                @endphp
                 <a href="/{{ $repair->slug }}" wire:navigate
                    class="group bg-white rounded-2xl border border-gray-200 hover:border-[#d70018] transition-all duration-400 relative overflow-hidden flex flex-col h-full card-premium">
 
-                    @if($repair->discount_percent)
-                        <div class="absolute top-3 left-3 z-10">
-                            <span class="bg-gradient-to-r from-[#d70018] to-[#ff4757] text-white text-[10px] font-bold px-3 py-1.5 rounded-lg shadow-lg shadow-red-500/25 animate-pulse-glow">
-                                GIẢM {{ $repair->discount_percent }}%
-                            </span>
-                        </div>
-                    @endif
+                    {{-- Product Image --}}
+                    <div class="relative h-36 md:h-40 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                        <img src="{{ $serviceImg }}" alt="{{ $repair->serviceType->name ?? '' }}"
+                             class="w-full h-full object-contain p-3 group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-60"></div>
 
-                    @if($index === 0)
-                        <div class="absolute top-3 right-3 z-10">
-                            <span class="bg-gradient-to-r from-amber-400 to-orange-500 text-black text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
-                                🔥 Bán chạy
-                            </span>
-                        </div>
-                    @endif
+                        @if($repair->discount_percent)
+                            <div class="absolute top-2.5 left-2.5 z-10">
+                                <span class="bg-gradient-to-r from-[#d70018] to-[#ff4757] text-white text-[10px] font-bold px-2.5 py-1 rounded-lg shadow-lg shadow-red-500/25 animate-pulse-glow">
+                                    -{{ $repair->discount_percent }}%
+                                </span>
+                            </div>
+                        @endif
 
-                    <div class="p-5 flex flex-col flex-1">
-                        <div class="mt-3 mb-3">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2.5 py-1 rounded-md">{{ $repair->serviceType->name ?? '' }}</span>
+                        @if($index === 0)
+                            <div class="absolute top-2.5 right-2.5 z-10">
+                                <span class="bg-gradient-to-r from-amber-400 to-orange-500 text-black text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-md">
+                                    🔥 Bán chạy
+                                </span>
+                            </div>
+                        @endif
+                    </div>
+
+                    {{-- Content --}}
+                    <div class="p-4 md:p-5 flex flex-col flex-1">
+                        <div class="mb-2">
+                            <span class="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2 py-0.5 rounded-md">{{ $repair->serviceType->name ?? '' }}</span>
                         </div>
-                        <h3 class="font-bold text-sm md:text-base text-gray-900 group-hover:text-[#d70018] transition-colors mb-3 line-clamp-2 flex-1">
+                        <h3 class="font-bold text-xs md:text-sm text-gray-900 group-hover:text-[#d70018] transition-colors mb-3 line-clamp-2 flex-1 leading-snug">
                             {{ $repair->serviceType->name ?? '' }} {{ $repair->deviceModel->name ?? '' }}
                         </h3>
 
                         <div class="pt-3 border-t border-gray-100 mt-auto">
-                            <div class="flex flex-col gap-1">
-                                <span class="text-lg md:text-xl font-black text-[#d70018]">{{ $repair->display_price }}</span>
-                                @if($repair->sale_price && $repair->price != $repair->sale_price)
-                                    <span class="text-xs text-gray-400 line-through">{{ number_format($repair->price, 0, ',', '.') }}đ</span>
-                                @else
-                                    <span class="text-xs text-transparent">.</span>
-                                @endif
+                            <div class="flex items-end justify-between gap-2">
+                                <div class="flex flex-col">
+                                    <span class="text-base md:text-lg font-black text-[#d70018]">{{ $repair->display_price }}</span>
+                                    @if($repair->sale_price && $repair->price != $repair->sale_price)
+                                        <span class="text-[10px] text-gray-400 line-through">{{ number_format($repair->price, 0, ',', '.') }}đ</span>
+                                    @endif
+                                </div>
+                                <span class="flex items-center justify-center w-7 h-7 bg-red-50 rounded-full group-hover:bg-[#d70018] transition-colors shrink-0">
+                                    <svg class="w-3.5 h-3.5 text-[#d70018] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -774,20 +917,7 @@
     ╚═══════════════════════════════════════════════════════╝ --}}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // ── Scroll Reveal (IntersectionObserver) ──
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children');
-    if (revealElements.length) {
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-    }
+    // Reveal observer is now handled globally in layout
 
     // ── Counter Animation ──
     const counters = document.querySelectorAll('.counter-value[data-target]');
@@ -856,6 +986,50 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 500);
     }
+
+    // ── 3D Tilt Effect for Service Cards ──
+    const tiltCards = document.querySelectorAll('.service-card-tilt');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / centerY * -6;
+            const rotateY = (x - centerX) / centerX * 6;
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
+        });
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.15s ease-out';
+        });
+    });
+
+    // ── Smooth shimmer sweep effect ──
+    const shimmerEls = document.querySelectorAll('.service-card-tilt [style*="transition: transform 0.8s"]');
+    tiltCards.forEach(card => {
+        const shimmer = card.querySelector('[style*="transition: transform 0.8s"]');
+        if (shimmer) {
+            card.addEventListener('mouseenter', () => {
+                shimmer.style.transform = 'translateX(200%)';
+                shimmer.style.opacity = '1';
+                setTimeout(() => {
+                    shimmer.style.transition = 'none';
+                    shimmer.style.transform = 'translateX(-100%)';
+                    shimmer.style.opacity = '0';
+                    setTimeout(() => {
+                        shimmer.style.transition = 'transform 0.8s ease, opacity 0.3s ease';
+                    }, 50);
+                }, 800);
+            });
+        }
+    });
 });
 </script>
 

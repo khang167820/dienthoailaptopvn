@@ -432,35 +432,73 @@ body {
 
 .reveal {
     opacity: 0;
-    transition: none;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.revealed {
-    animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-left.revealed {
-    animation: revealLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-right.revealed {
-    animation: revealRight 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal-scale.revealed {
-    animation: revealScale 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* Stagger children */
-.stagger-children.revealed > * { opacity: 0; animation: revealUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-.stagger-children.revealed > *:nth-child(1) { animation-delay: 0.05s; }
-.stagger-children.revealed > *:nth-child(2) { animation-delay: 0.12s; }
-.stagger-children.revealed > *:nth-child(3) { animation-delay: 0.19s; }
-.stagger-children.revealed > *:nth-child(4) { animation-delay: 0.26s; }
-.stagger-children.revealed > *:nth-child(5) { animation-delay: 0.33s; }
-.stagger-children.revealed > *:nth-child(6) { animation-delay: 0.40s; }
-.stagger-children.revealed > *:nth-child(7) { animation-delay: 0.47s; }
-.stagger-children.revealed > *:nth-child(8) { animation-delay: 0.54s; }
+/* Stagger children — uses transition delays instead of animation */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-children.revealed > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.12s; }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.19s; }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.26s; }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.33s; }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.40s; }
+.stagger-children.revealed > *:nth-child(7) { transition-delay: 0.47s; }
+.stagger-children.revealed > *:nth-child(8) { transition-delay: 0.54s; }
 
 /* ═══════════════════════════════════════════
    PARTICLE DOTS (Hero Background)
@@ -852,3 +890,97 @@ body {
 .stat-card:last-child::after {
     display: none;
 }
+
+/* ═══════════════════════════════════════════
+   SERVICE CARD 3D TILT
+   ═══════════════════════════════════════════ */
+.service-card-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.service-card-tilt::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 255, 255, 0.06) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card-tilt:hover::before {
+    opacity: 1;
+}
+
+/* Service card image section enhanced */
+.service-card-tilt img {
+    will-change: transform;
+}
+
+/* Service card content lift on hover */
+.service-card-tilt:hover .relative.z-10 {
+    transform: translateZ(30px);
+}
+
+.service-card-tilt .relative.z-10 {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* ═══════════════════════════════════════════
+   ENHANCED SERVICE CARDS (Dịch vụ mũi nhọn)
+   ═══════════════════════════════════════════ */
+.glass-card .h-44 img,
+.glass-card-dark .h-44 img,
+.card-premium .h-44 img {
+    will-change: transform;
+}
+
+/* Service card image hover glow */
+.glass-card:hover .h-44::after,
+.glass-card-dark:hover .h-44::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-brand), transparent);
+    animation: shimmer 2s ease-in-out infinite;
+    z-index: 5;
+}
+
+/* ═══════════════════════════════════════════
+   PING ANIMATION (Live indicators)
+   ═══════════════════════════════════════════ */
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.animate-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+   ═══════════════════════════════════════════ */
+@media (max-width: 640px) {
+    .service-card-tilt {
+        min-height: 260px !important;
+    }
+
+    .service-card-tilt:hover {
+        transform: none !important;
+    }
+}
+
